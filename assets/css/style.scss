@@ -1,0 +1,178 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+section {
+  width: 690px;
+  background-color: #fff;
+  margin-top: 140px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1210px;
+}
+
+body {
+  background: url(../images/body-background.png) #fff;
+  font: 14px/22px HelveticaNeueZurich, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+header {
+  background: #0f05a0;
+  padding: 25px 20px 20px 20px;
+
+  text-align: left;
+
+  h1 {
+    font: 40px/40px HelveticaNeueZurich, "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
+    padding-left: 55px;
+    line-height: 1.3;
+  }
+
+  img {
+    display: inline;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 45px;
+    float: left;
+  }
+
+  p {
+    position: relative;
+    left: 60px;
+  }
+}
+
+.active a {
+  font-weight: bold;
+}
+
+nav {
+  width: 290px;
+  margin-left: -640px;
+  top: 170px;
+}
+
+p,
+li {
+  font-size: 1.0625rem;
+}
+
+pre {
+  color: #000;
+  background-color: #fff;
+}
+
+nav ul a {
+  color: #737373;
+}
+
+nav ul {
+  font-size: 16px;
+}
+
+nav ul li {
+  color: #0f05a0;
+}
+
+nav ul li.tag-h1 {
+  font-size: 1.2em;
+  color: #0f05a0;
+  border-top: 1px solid;
+}
+
+li.tag-h3 {
+  font-size: 0.9rem;
+  display: none;
+}
+
+ul {
+  list-style-image: none;
+  list-style-type: square;
+}
+
+nav ul li.tag-h1 a {
+  font-weight: bold;
+  color: #0f05a0;
+}
+
+ul ul li {
+	margin: 12px 0;
+}
+
+h1 {
+  color: #0f05a0;
+}
+
+video {
+  max-width: 100%;
+}
+
+#banner {
+  display: none;
+  background: #0f05a0;
+  border: none;
+  margin-right: -482px;
+
+  .fork {
+    background-color: #070046;
+  }
+  .button {
+    border: 1px solid #737373;
+    background: #070046;
+
+    &:hover {
+      background: #666;
+    }
+  }
+  strong {
+    color: #fff;
+  }
+}
+
+#logo {
+    height: 32px;
+    width: 32px;
+    right:7px;
+    top:7px;
+    display: block;
+    background:url(../images/github-mark-32px.png) no-repeat;
+    float: right;
+    margin-left: 5px;
+}
+
+@media print, screen and (max-width: 1060px) {
+  section {
+    max-width: 700px;
+
+    h1 {
+      white-space: normal;
+    }
+  }
+}
+
+@media print, screen and (max-width: 720px) {
+  section {
+    width: auto;
+    margin-top: 5px;
+  }
+  .container {
+    width: auto;
+    img {
+      display: none;
+    }
+  }
+  header {
+    h1 {
+      white-space: normal;
+      font: 32px/32px HelveticaNeueZurich, "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
+      padding-left: 0px;
+    }
+  }
+}
+
