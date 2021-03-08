@@ -1,20 +1,63 @@
-# Kurs-Template
-
-**A template for the documentation of a course**
-
-This template is based on our [dataviz crash course](https://github.com/opendatazurich/crashkurs-dataviz).
-
+# Crashkurs für Power BI Datenvisualisierung
+<!-- 
 ## TODO für neuen Kurs
-
-- [ ] Im `_config.yml` die Werte anpassen (insbesondere `title` und `description`)
-- [ ] Kurs-Inhalt in README.me erfassen, Überschrift 1 und 2 (in Markdown mit `#` und `##` markiert) wird als Navigation auf der Seite zur Verfügung gestellt (auf Geräte mit kleinem Bildschirm ist das ausgeblendet). **HINWEIS:** Die erste Überschrift ist absichtlich nicht in der Navigation, das ist für den Haupttitel des Kurses (dies kann in der Datei `assets/js/main.js` angepasst werden, falls nötig).
-- [ ] In den Settings "GitHub Pages" aktivieren (mit Branch `main` und `root`): ![GitHub Pages in den Settings](https://user-images.githubusercontent.com/538415/106585645-d674e300-6547-11eb-8556-39a3fa540547.png)
-
-**Tipp für Bilder und Videos**: am einfachstes ist es die Bilder und Videos direkt in das Eingabefeld eines neuen GitHub Issues einzufügen, dadurch wird das Bild/Video direkt auf GitHub hochgeladen und die URL kann ins README kopiert werden.
-
+ -->
+<!-- **Tipp für Bilder und Videos**: am einfachstes ist es die Bilder und Videos direkt in das Eingabefeld eines neuen GitHub Issues einzufügen, dadurch wird das Bild/Video direkt auf GitHub hochgeladen und die URL kann ins README kopiert werden. -->
+<!-- 
 <video preload="none" poster="https://user-images.githubusercontent.com/538415/106586754-1d170d00-6549-11eb-8e7d-d24e0ea4cb13.jpg" src="https://user-images.githubusercontent.com/538415/106586882-3ddf6280-6549-11eb-9db5-9f1ddb7552cc.mp4" controls="controls" muted="muted" style="max-height:640px;"><img alt="GitHub Upload" src="https://user-images.githubusercontent.com/538415/106586824-2d2eec80-6549-11eb-8348-9ddf62f08607.gif"/></video>
-
+ -->
 # Teil 1: Daten finden
+
+Rufe den Open Data Katalog der Stadt Zürich auf unter: «[https://data.stadt-zuerich.ch/](https://data.stadt-zuerich.ch/)». Wir müssen drei Datensätze herunterladen
+
+1. Glasfasernetz Leistungsdaten der Stadt Zürich
+1. Glasfasernetz Gebiete der Stadt Zürich
+1. Bruttolastgang der Stadt Zürich
+
+## [Daten] Glasfasernetz Leistungsdaten
+
+- **Schritt 1:** Suche nach Zürich Glasfasernetz Leistungsdaten. Gebe dazu im Suchfeld beispielsweise den Begriff «Glasfasernetz» und «Leistungsdaten» ein. Beim Eintippen des Suchbegriffs werden bereits passende Vorschläge zu auf dem Katalog vorkommenden Daten angezeigt.  
+
+- **Schritt 2:** Wähle das Dataset «[Zürich Glasfasernetz Leistungsdaten](https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet)» aus und lies die Metadaten dazu. Besonders wichtig sind dabei die Attributbeschreibungen, welche die Ausprägungen der Informationen im Datensatz beschreiben. Weiterführende wichtige Informationen sind auch unter *Bemerkungen* zu finden. 
+    ```
+    Der Datensatz enthält die gemessenen Leistungsdaten (Up- und Downstream) in Bit pro Sekunde (pro «Core Location») sim Glasfasernetz der Stadt Zürich. Die Messdaten werden für jede Viertelstunde pro Knotenpunkt, aggregiert (Durchschnitt), ausgewiesen.
+    ```
+  <img src="https://user-images.githubusercontent.com/7482996/110360261-cd8f9980-803e-11eb-9357-e6d6e21608a5.png" alt="Suchresultatvorschau"/>
+
+  - Die Datensätze selber sind unter *Daten und Ressourcen* zu finden. Wähle dort einen Datensatz aus und klicke darauf. 
+  - Dadurch öffnet sich eine neue Webseite, welche den Downloadlink und eine einfache Datenvorschau beinhaltet.
+  - Klicke nun auf den Downloadlink, um die Daten herunter zu laden. 
+  - Es gibt ein File pro Monat. Es wäre besser, alle Datei herunterlanden und in einem Folder kopieren. Wir werden bis Januar 2021 39 Files haben. 
+
+## [Daten] Glasfasernetz Gebiete
+
+- **Schritt 1:** Suche nach Zürich Glasfasernetz Versorgungszonen. Gebe dazu im Suchfeld beispielsweise den Begriff «Glasfasernetz» und «Versorgungszonen» ein. Beim Eintippen des Suchbegriffs werden bereits passende Vorschläge zu auf dem Katalog vorkommenden Daten angezeigt.  
+
+- **Schritt 2:** Wähle das Dataset «[Zürich Glasfasernetz Versorgungszonen](https://data.stadt-zuerich.ch/dataset/ewz_gebiete_zuerinet)» aus und lies die Metadaten dazu. Besonders wichtig sind dabei die Attributbeschreibungen, welche die Ausprägungen der Informationen im Datensatz beschreiben. 
+
+  - Die Datensätze selber sind unter *Daten und Ressourcen* zu finden. Wähle dort den «ewz_gebiete_zuerinet.json» aus und klicke darauf. 
+  - Dadurch öffnet sich eine neue Webseite, welche den Downloadlink und eine einfache Datenvorschau beinhaltet.
+  - Klicke nun auf den Downloadlink, um die Daten herunter zu laden. 
+
+- **Schritt 3:** Power BI würde diese «[GeoJSON-Datei](https://de.wikipedia.org/wiki/GeoJSON)» im «[TopoJSON-Format](https://en.wikipedia.org/wiki/GeoJSON#TopoJSON)» benötigen. Zur Konvertierung in Topojson können wir das «[MapShaper Portal](https://mapshaper.org/)» verwenden. Wählen Sie nach dem Importieren die Option "Export", wählen Sie «TopoJSON» aus und laden Sie die Datei herunter. Geben Sie die Dateierweiterung "topojson" für zukünftige Referenzen an. 
+
+  <img src="https://user-images.githubusercontent.com/7482996/110362882-27459300-8042-11eb-93ec-7f2021736b0e.png" width=400 alt="MapShaper Import"/>
+  <img src="https://user-images.githubusercontent.com/7482996/110363068-6247c680-8042-11eb-89a1-97c12bf99a8d.png", width=400 alt="MapShaper Export"/>
+
+## [Daten] Bruttolastgang
+
+- **Schritt 1:** Suche nach Zürich Viertelstundenwerte zum Bruttolastgang elektrische Energie. Gebe dazu im Suchfeld beispielsweise den Begriff «Bruttolastgang» ein. Beim Eintippen des Suchbegriffs werden bereits passende Vorschläge zu auf dem Katalog vorkommenden Daten angezeigt.  
+
+- **Schritt 2:** Wähle das Dataset «[Viertelstundenwerte zum Bruttolastgang elektrische Energie der Stadt Zürich](https://data.stadt-zuerich.ch/dataset/ewz_bruttolastgang_stadt_zuerich)» aus und lies die Metadaten dazu. Besonders wichtig sind dabei die Attributbeschreibungen, welche die Ausprägungen der Informationen im Datensatz beschreiben. Weiterführende wichtige Informationen sind auch unter *Bemerkungen* zu finden. 
+    ```
+    Der Bruttolastgang wird basierend auf zahlreichen Messungen zur Einspeisung und zum Verbrauch berechnet. Einzelne Messungen können dabei fehlen und müssen nachträglich nochmals eingepflegt werden.
+    ```
+  - Die Datensätze selber sind unter *Daten und Ressourcen* zu finden. Wähle dort 
+  «2020_ewz_bruttolastgang.csv» Datensatz aus und klicke darauf. 
+  - Dadurch öffnet sich eine neue Webseite, welche den Downloadlink und eine einfache Datenvorschau beinhaltet.
+  - Klicke nun auf den Downloadlink, um die Daten herunter zu laden. 
+
+<!-- ## [Daten] Hundebestand
 Zur Beantwortung der Fragestellung benötigen wir die dazu relevanten Daten. Wir müssen uns zuerst auf die Suche machen:
 
 - **Schritt 1:** Rufe den Open Data Katalog der Stadt Zürich auf unter: [https://data.stadt-zuerich.ch/](https://data.stadt-zuerich.ch/)
@@ -36,9 +79,9 @@ Zur Beantwortung der Fragestellung benötigen wir die dazu relevanten Daten. Wir
 
 - **Schritt 7:** Du hast nun die beiden für unsere Fragestellung relevanten Datensätze gefunden und heruntergeladen. Sie heissen `20200306_hundehalter.csv` (Hunde) und `BEV390OD3903.csv`(Bevölkerungsdaten). Kopiere diese beiden Datensätze nun aus dem Downloadverzeichnis Deines Computers und lege sie in ein Verzeichnis, wo Du an den noch folgenden Schritten weiter arbeiten kannst. 
 
-Damit ist unser erster Teil zum Thema «Daten finden» beendet. Solltest Du später einmal für eine andere Fragestellung auf dem [Open Data Katalog der Stadt Zürich](https://data.stadt-zuerich.ch) nicht fündig werden, können auch viele andere Open Data Quellen konsultiert werden. Auf nationaler Ebene werden unter [opendata.swiss](https://opendata.swiss) sämtliche offenen Verwaltungsdaten von verschiedenen Bundesstellen, anderen Kantonen und Städten angeboten. 
+Damit ist unser erster Teil zum Thema «Daten finden» beendet. Solltest Du später einmal für eine andere Fragestellung auf dem [Open Data Katalog der Stadt Zürich](https://data.stadt-zuerich.ch) nicht fündig werden, können auch viele andere Open Data Quellen konsultiert werden. Auf nationaler Ebene werden unter [opendata.swiss](https://opendata.swiss) sämtliche offenen Verwaltungsdaten von verschiedenen Bundesstellen, anderen Kantonen und Städten angeboten.  -->
 
-# Teil 2: Excel
+# Teil 2: Power BI
 
 ## CSV... what?
 Eines der Grundprinzipien von Open Data ist, dass die Datensätze in **nicht-proprietären Formaten** veröffentlicht werden sollen. Sprich, für die Verwendung der Daten sollen die AnwenderInnen nicht auf kommerzielle Software angewiesen sein. Damit soll allen die gleiche Möglichkeit gegeben werden, mit den Daten arbeiten zu können. Das Excelformat (.xls oder .xlsx) ist ein Beispiel eines proprietären Datenformats, weil es zur Verwendung Excel erfordert.
@@ -67,7 +110,9 @@ Der angezeigte CSV-Auszug oben repräsentiert die folgende Tabelle:
 
 ![Darstellung Excel](https://user-images.githubusercontent.com/2479732/104014716-cc173180-51b3-11eb-9440-3d87d2fb6128.png)
 
-## CSV-Datensätze in Excel laden
+## **----------------CHECKPOINT-------------------------**
+
+<!-- ## CSV-Datensätze in Excel laden
 
 Vielleicht fragst Du Dich unterdessen, wozu der ganze Exkurs über CSV dienlich sein soll...(?)
 Leider ist es so, dass viele Datennutzende bereits zu diesem Zeitpunkt scheitern, wenn sie noch nie mit CSV gearbeitet haben und eine CSV-Datei in Excel öffnen wollen.
@@ -118,7 +163,7 @@ Damit wir die Resultate der Anzahl Hunde und Anzahl Kleinkinder pro Stadtquartie
 
 ## CSV-Datei
 Die CSV-Datei, auf der dieser Kurs basiert, kann von GitHub heruntergeladen werden: [ZIP-Datei mit den verlinkten CSVs](https://github.com/opendatazurich/kurs-template/raw/main/files/beispiel.csv).
-[![Excel-Datei](https://user-images.githubusercontent.com/538415/104441265-bb8c0000-5593-11eb-91ac-daf61d617bc1.png)](https://github.com/opendatazurich/kurs-template/raw/main/files/beispiel.csv)
+[![Excel-Datei](https://user-images.githubusercontent.com/538415/104441265-bb8c0000-5593-11eb-91ac-daf61d617bc1.png)](https://github.com/opendatazurich/kurs-template/raw/main/files/beispiel.csv) -->
 
 ## Tutorials
 
