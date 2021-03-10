@@ -49,9 +49,10 @@ Rufe den Open Data Katalog der Stadt Zürich auf unter: «[https://data.stadt-zu
 - **Schritt 1:** Suche nach Zürich Viertelstundenwerte zum Bruttolastgang elektrische Energie. Gebe dazu im Suchfeld beispielsweise den Begriff «Bruttolastgang» ein. Beim Eintippen des Suchbegriffs werden bereits passende Vorschläge zu auf dem Katalog vorkommenden Daten angezeigt.  
 
 - **Schritt 2:** Wähle das Dataset «[Viertelstundenwerte zum Bruttolastgang elektrische Energie der Stadt Zürich](https://data.stadt-zuerich.ch/dataset/ewz_bruttolastgang_stadt_zuerich)» aus und lies die Metadaten dazu. Besonders wichtig sind dabei die Attributbeschreibungen, welche die Ausprägungen der Informationen im Datensatz beschreiben. Weiterführende wichtige Informationen sind auch unter *Bemerkungen* zu finden. 
-    ```
-    Der Bruttolastgang wird basierend auf zahlreichen Messungen zur Einspeisung und zum Verbrauch berechnet. Einzelne Messungen können dabei fehlen und müssen nachträglich nochmals eingepflegt werden.
-    ```
+
+      ```
+      Der Bruttolastgang wird basierend auf zahlreichen Messungen zur Einspeisung und zum Verbrauch berechnet. Einzelne Messungen können dabei fehlen und müssen nachträglich nochmals eingepflegt werden.
+      ```
   - Die Datensätze selber sind unter *Daten und Ressourcen* zu finden. Wähle dort 
   «2020_ewz_bruttolastgang.csv» Datensatz aus und klicke darauf. 
   - Dadurch öffnet sich eine neue Webseite, welche den Downloadlink und eine einfache Datenvorschau beinhaltet.
@@ -110,6 +111,38 @@ Der angezeigte CSV-Auszug oben repräsentiert die folgende Tabelle in Excel:
 
 ![Darstellung Excel](https://user-images.githubusercontent.com/2479732/104014716-cc173180-51b3-11eb-9440-3d87d2fb6128.png)
 
+## Power BI Desktop - Short GUI Intro 
+
+Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine detaillierte Beschreibung schauen Sie bitte auf die Seite von «[Microsoft](https://docs.microsoft.com/de-CH/power-bi/transform-model/desktop-query-overview)».
+
+- Power BI Desktop verfügt über drei Ansichten:
+
+  - ***Berichtsansicht.*** Hier entwerfen Sie mithilfe selbst erstellter Abfragen ansprechende Visualisierungen, ordnen diese wie gewünscht und bei Bedarf auf mehreren Seiten an und geben Sie für andere Benutzer frei
+  - ***Datenansicht.*** Hier können Sie die Daten Ihres Berichts im Datenmodellformat anzeigen und Measures hinzufügen, neue Spalten erstellen und Beziehungen verwalten
+  - ***Beziehungsansicht.*** Hier können Sie eine grafische Darstellung der Beziehungen abrufen, die in Ihrem Datenmodell eingerichtet wurden, und diese je nach Bedarf verwalten oder ändern.
+
+  <img src="https://docs.microsoft.com/en-us/power-bi/transform-model/media/desktop-query-overview/query-overview-view-icons.png"/>
+
+- Sie können den Power Query-Editor aufrufen, indem Sie auf der Registerkarte Start auf die Option Abfragen bearbeiten klicken.
+  
+  <img src="https://docs.microsoft.com/en-us/power-bi/transform-model/media/desktop-query-overview/query-overview-transform.png"/>
+
+- Nach dem Herstellen einer Datenverbindung sieht der Power Query-Editor wie folgt aus:
+
+  1. Im Menüband sind jetzt viele Schaltflächen aktiv, über die Sie die Daten in der Abfrage interaktiv bearbeiten können.
+
+  1. Im linken Bereich sind die Abfragen aufgelistet und können ausgewählt, angezeigt und strukturiert werden.
+  
+  1. Im mittleren Bereich werden die Daten der ausgewählten Abfrage angezeigt und können dort strukturiert werden.
+  
+  1. Der Bereich Abfrageeinstellungen wird angezeigt. Hier sind die Eigenschaften der Abfrage und die angewendeten Schritte aufgelistet.
+
+  <img src="https://docs.microsoft.com/en-us/power-bi/transform-model/media/desktop-query-overview/query-overview-with-data-connection.png"/>
+
+- Wenn Sie mit Ihrer Abfrage zufrieden sind, klicken Sie im Dateimenü des Power Query-Editors auf ***Close & Apply*** (Schließen und anwenden). Mit dieser Aktion werden die Änderungen angewendet und der Editor geschlossen.
+    
+    <img src="https://user-images.githubusercontent.com/7482996/110667557-a960c380-81ca-11eb-8e93-9326e72af365.png"/>
+
 ## Bruttolastgang-Datensätze in Power BI laden
 
 1. import data directly from the csv weblink
@@ -129,12 +162,18 @@ Der angezeigte CSV-Auszug oben repräsentiert die folgende Tabelle in Excel:
 1. remove outliers (>80Gbps)
 1. add date column for quick analysis
 
+## Glasfasernetz-gebiete GeoJSON in Power BI laden
+
+1. import GeoJSON file
+1. Select only "features.properties.name", "features.properties.CO" columns
+1. rename colmsn to ```Gebiet``` and ```CO``` respectively. 
+
 ## Create Calendar Table
 
 1. use ```CALENDARAUTO()``` for magical calendar table.
 1. use the code snippet below to ge a more detailed 15-Minute DateTime table.
     ```
-      Time Table = 
+    Time Table = 
     ADDCOLUMNS(
         CROSSJOIN(
             CALENDARAUTO(),
@@ -149,6 +188,7 @@ Der angezeigte CSV-Auszug oben repräsentiert die folgende Tabelle in Excel:
         ),
         "Year", YEAR([Date]),
         "Quarter", QUARTER([Date]),
+        "YearQuarter", FORMAT([Date],"yyyy")&"-Q"&QUARTER([Date]),
         "Month", FORMAT([Date],"mmm"),
         "Day", DAY([Date]),
         "WeekDay", FORMAT([Date],"ddd"),
@@ -163,6 +203,31 @@ Der angezeigte CSV-Auszug oben repräsentiert die folgende Tabelle in Excel:
 
 ## Set relationships
 
+1. the relationship would automatically appear afet apply and close. Otherwise can lso be set manually with drag and drop, or using the relationships button in the toolbar. 
+
+    <img src="https://user-images.githubusercontent.com/7482996/110663918-39047300-81c7-11eb-9780-27f02f094b04.png" alt ="Verbindungen zwischen Tabellen"/>
+
+## Claculated Columns and Measures
+
+  - Calculated Column example:
+    
+    ```
+    Up/Down Ratio ZH % = 
+      DIVIDE( zurinet_csv[UPSTREAM (Gb/s)] ,
+              zurinet_csv[DOWNSTREAM (Gb/s)]
+            )
+    ```
+  - Calculated Measure example:
+    
+    ```
+    Median Up/Down Ratio ZH % = 
+        CALCULATE(
+            DIVIDE( MEDIAN(zurinet_csv[UPSTREAM (Gb/s)]) ,
+                    MEDIAN(zurinet_csv[DOWNSTREAM (Gb/s)])
+                )
+            )
+    ```
+
 ## Build reports and investigate
 
 1. energy and fiber vs date
@@ -172,8 +237,8 @@ Der angezeigte CSV-Auszug oben repräsentiert die folgende Tabelle in Excel:
 
 
  
-
-## **----------------CHECKPOINT-------------------------**
+---
+***
 
 
 <!-- ## CSV-Datensätze in Excel laden
@@ -229,7 +294,7 @@ Damit wir die Resultate der Anzahl Hunde und Anzahl Kleinkinder pro Stadtquartie
 Die CSV-Datei, auf der dieser Kurs basiert, kann von GitHub heruntergeladen werden: [ZIP-Datei mit den verlinkten CSVs](https://github.com/opendatazurich/kurs-template/raw/main/files/beispiel.csv).
 [![Excel-Datei](https://user-images.githubusercontent.com/538415/104441265-bb8c0000-5593-11eb-91ac-daf61d617bc1.png)](https://github.com/opendatazurich/kurs-template/raw/main/files/beispiel.csv) -->
 
-## Tutorials
+# Tutorials
 
 ### Datawrapper
 Datawrapper hat eine Reihe von [Tutorials](https://academy.datawrapper.de/) und [Schulungsunterlagen](https://www.datawrapper.de/training-materials/), die die einzelnen Diagramm- und Karten-Typen erklären und wie damit Visualisierungen erstellt werden können.
