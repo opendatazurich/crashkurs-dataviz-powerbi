@@ -106,11 +106,75 @@ CSV-Dateien haben meistens auf der ersten Zeile eine Spaltenüberschrift und auf
 Werte zwischen Anführungszeichen sind entweder Texte oder Datumswerte.
 Wo keine Anführungszeichen stehen, handelt es sich um numerische Werte.
 Die Kodierung für Unicode-Zeichen ist dabei standardmässig [UTF-8](https://de.wikipedia.org/wiki/UTF-8).
-Der angezeigte CSV-Auszug oben repräsentiert die folgende Tabelle:
+Der angezeigte CSV-Auszug oben repräsentiert die folgende Tabelle in Excel:
 
 ![Darstellung Excel](https://user-images.githubusercontent.com/2479732/104014716-cc173180-51b3-11eb-9440-3d87d2fb6128.png)
 
+## Bruttolastgang-Datensätze in Power BI laden
+
+1. import data directly from the csv weblink
+1. check and remove null values
+1. Check for duplicated timestamps
+1. sort based on timestamp, then status, and then remove duplicates
+1. change the energy dimension to GWh (easier to read later)
+1. add date column for quick analysis
+
+## Glasfasernetz-Datensätze in Power BI laden
+
+1. import downloaded data from folder
+1. check for the quality of the data
+1. remove null values
+1. remove duplicated values based on timestamp and CO
+1. change scale to Gbps for better interpretation
+1. remove outliers (>80Gbps)
+1. add date column for quick analysis
+
+## Create Calendar Table
+
+1. use ```CALENDARAUTO()``` for magical calendar table.
+1. use the code snippet below to ge a more detailed 15-Minute DateTime table.
+    ```
+      Time Table = 
+    ADDCOLUMNS(
+        CROSSJOIN(
+            CALENDARAUTO(),
+            SELECTCOLUMNS(
+                GENERATESERIES(
+                    TIME(0,0,0),   
+                    TIME(23,59,59),
+                    TIME(0,15,0)
+                    ),
+                    "Time" , [Value] 
+            )
+        ),
+        "Year", YEAR([Date]),
+        "Quarter", QUARTER([Date]),
+        "Month", FORMAT([Date],"mmm"),
+        "Day", DAY([Date]),
+        "WeekDay", FORMAT([Date],"ddd"),
+        "WeekTime", WEEKDAY([Date],2)+(HOUR([Time])*60+MINUTE([Time]))/1440,
+        "StartofWeek", [Date] - WEEKDAY([Date],2) + 1,
+        "StartofMonth", DATE(YEAR([Date]),MONTH([Date]),1),
+        "StartofQuarter", DATE(YEAR([Date]),QUARTER([Date])*3-2,1),
+        "DateTime", [Date]+[Time]
+    )
+    ```
+1. Add new columns as needed
+
+## Set relationships
+
+## Build reports and investigate
+
+1. energy and fiber vs date
+1. fiber per CO in a Map
+1. Investigate time of the week, year, months (How dows the energy or internet consumption pattern changes)
+
+
+
+ 
+
 ## **----------------CHECKPOINT-------------------------**
+
 
 <!-- ## CSV-Datensätze in Excel laden
 
