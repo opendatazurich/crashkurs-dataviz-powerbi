@@ -41,7 +41,7 @@ Rufe den Open Data Katalog der Stadt Zürich auf unter: «[https://data.stadt-zu
 
 - **Schritt 3:** Power BI würde diese «[GeoJSON-Datei](https://de.wikipedia.org/wiki/GeoJSON)» im «[TopoJSON-Format](https://en.wikipedia.org/wiki/GeoJSON#TopoJSON)» benötigen. Zur Konvertierung in Topojson können wir das «[MapShaper Portal](https://mapshaper.org/)» verwenden. Wählen Sie nach dem Importieren die Option "Export", wählen Sie «TopoJSON» aus und laden Sie die Datei herunter. Geben Sie die Dateierweiterung "topojson" für zukünftige Referenzen an. 
 
-  <img src="https://user-images.githubusercontent.com/7482996/110362882-27459300-8042-11eb-93ec-7f2021736b0e.png" width=400 alt="MapShaper Import"/>
+  <img src="https://user-images.githubusercontent.com/7482996/110362882-27459300-8042-11eb-93ec-7f2021736b0e.png" width=400 alt="MapShaper Import"/> 
   <img src="https://user-images.githubusercontent.com/7482996/110363068-6247c680-8042-11eb-89a1-97c12bf99a8d.png", width=400 alt="MapShaper Export"/>
 
 ## [Daten] Bruttolastgang
