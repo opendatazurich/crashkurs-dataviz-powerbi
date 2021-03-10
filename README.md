@@ -50,9 +50,8 @@ Rufe den Open Data Katalog der Stadt Zürich auf unter: «[https://data.stadt-zu
 
 - **Schritt 2:** Wähle das Dataset «[Viertelstundenwerte zum Bruttolastgang elektrische Energie der Stadt Zürich](https://data.stadt-zuerich.ch/dataset/ewz_bruttolastgang_stadt_zuerich)» aus und lies die Metadaten dazu. Besonders wichtig sind dabei die Attributbeschreibungen, welche die Ausprägungen der Informationen im Datensatz beschreiben. Weiterführende wichtige Informationen sind auch unter *Bemerkungen* zu finden. 
 
-      ```
-      Der Bruttolastgang wird basierend auf zahlreichen Messungen zur Einspeisung und zum Verbrauch berechnet. Einzelne Messungen können dabei fehlen und müssen nachträglich nochmals eingepflegt werden.
-      ```
+  > :warning: Der Bruttolastgang wird basierend auf zahlreichen Messungen zur Einspeisung und zum Verbrauch berechnet. Einzelne Messungen können dabei fehlen und müssen nachträglich nochmals eingepflegt werden.
+
   - Die Datensätze selber sind unter *Daten und Ressourcen* zu finden. Wähle dort 
   «2020_ewz_bruttolastgang.csv» Datensatz aus und klicke darauf. 
   - Dadurch öffnet sich eine neue Webseite, welche den Downloadlink und eine einfache Datenvorschau beinhaltet.
