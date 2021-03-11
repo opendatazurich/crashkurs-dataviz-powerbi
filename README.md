@@ -109,7 +109,9 @@ Die Kodierung für Unicode-Zeichen ist dabei standardmässig [UTF-8](https://de.
 Der angezeigte CSV-Auszug oben repräsentiert die folgende Tabelle in Excel:
 
 ![Darstellung Excel](https://user-images.githubusercontent.com/2479732/104014716-cc173180-51b3-11eb-9440-3d87d2fb6128.png)
+## Median?
 
+<img src="https://user-images.githubusercontent.com/7482996/110783095-3dcd3380-8268-11eb-91a5-978d0524eae6.png"/>
 ## Power BI Desktop - Short GUI Intro 
 
 Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine detaillierte Beschreibung schauen Sie bitte auf die Seite von «[Microsoft](https://docs.microsoft.com/de-CH/power-bi/transform-model/desktop-query-overview)».
