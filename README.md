@@ -19,10 +19,10 @@ Rufe den Open Data Katalog der Stadt Zürich auf unter: «[https://data.stadt-zu
 - **Schritt 1:** Suche nach Zürich Glasfasernetz Leistungsdaten. Gebe dazu im Suchfeld beispielsweise den Begriff «Glasfasernetz» und «Leistungsdaten» ein. Beim Eintippen des Suchbegriffs werden bereits passende Vorschläge zu auf dem Katalog vorkommenden Daten angezeigt.  
 
 - **Schritt 2:** Wähle das Dataset «[Zürich Glasfasernetz Leistungsdaten](https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet)» aus und lies die Metadaten dazu. Besonders wichtig sind dabei die Attributbeschreibungen, welche die Ausprägungen der Informationen im Datensatz beschreiben. Weiterführende wichtige Informationen sind auch unter *Bemerkungen* zu finden. 
-    ```
-    Der Datensatz enthält die gemessenen Leistungsdaten (Up- und Downstream) in Bit pro Sekunde (pro «Core Location») sim Glasfasernetz der Stadt Zürich. Die Messdaten werden für jede Viertelstunde pro Knotenpunkt, aggregiert (Durchschnitt), ausgewiesen.
-    ```
-  <img src="https://user-images.githubusercontent.com/7482996/110360261-cd8f9980-803e-11eb-9357-e6d6e21608a5.png" alt="Suchresultatvorschau"/>
+
+    <img src="https://user-images.githubusercontent.com/7482996/110360261-cd8f9980-803e-11eb-9357-e6d6e21608a5.png" alt="Suchresultatvorschau"/>
+  
+  > ***!!!*** Der Datensatz enthält die gemessenen Leistungsdaten (Up- und Downstream) in Bit pro Sekunde (pro «Core Location») sim Glasfasernetz der Stadt Zürich. Die Messdaten werden für jede Viertelstunde pro Knotenpunkt, aggregiert (Durchschnitt), ausgewiesen.
 
   - Die Datensätze selber sind unter *Daten und Ressourcen* zu finden. Wähle dort einen Datensatz aus und klicke darauf. 
   - Dadurch öffnet sich eine neue Webseite, welche den Downloadlink und eine einfache Datenvorschau beinhaltet.
