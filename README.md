@@ -112,7 +112,11 @@ Der angezeigte CSV-Auszug oben repräsentiert die folgende Tabelle in Excel:
 ## Median?
 
 <img src="https://user-images.githubusercontent.com/7482996/110783095-3dcd3380-8268-11eb-91a5-978d0524eae6.png"/>
-## Power BI Desktop - Short GUI Intro 
+
+
+## Power BI Desktop - kurze GUI Intro 
+
+### Query Editor
 
 Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine detaillierte Beschreibung schauen Sie bitte auf die Seite von «[Microsoft](https://docs.microsoft.com/de-CH/power-bi/transform-model/desktop-query-overview)».
 
@@ -140,39 +144,60 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 
   <img src="https://docs.microsoft.com/en-us/power-bi/transform-model/media/desktop-query-overview/query-overview-with-data-connection.png"/>
 
-- Wenn Sie mit Ihrer Abfrage zufrieden sind, klicken Sie im Dateimenü des Power Query-Editors auf ***Close & Apply*** (Schließen und anwenden). Mit dieser Aktion werden die Änderungen angewendet und der Editor geschlossen.
+- Wenn Sie mit Ihrer Abfrage zufrieden sind, klicken Sie im Dateimenü des Power Query-Editors auf ***Close & Apply*** (Schliessen und anwenden). Mit dieser Aktion werden die Änderungen angewendet und der Editor geschlossen.
     
     <img src="https://user-images.githubusercontent.com/7482996/110667557-a960c380-81ca-11eb-8e93-9326e72af365.png"/>
 
+### Report Builder
+
+  Sie könnten längere Version auf dem Microsoft Portal finden: «(Erstellen von Berichten)[https://docs.microsoft.com/de-CH/power-bi/fundamentals/desktop-getting-started]»
+
+- In der Power BI Desktop-Ansicht Bericht können Sie Visualisierungen und Berichte erstellen. Die Ansicht Bericht besteht aus sechs Hauptbereichen:
+  
+  1. Das Menüband im oberen Bereich, in dem häufige Aufgaben in Verbindung mit Berichten und Visualisierungen angezeigt werden.
+  1. Der Canvasbereich, in dem Visualisierungen erstellt und angeordnet werden.
+  1. Der Registerkartenbereich „Seiten“ am unteren Rand, in dem Sie Berichtsseiten auswählen oder hinzufügen können.
+  1. Der Bereich **Filter**, in dem Sie Datenvisualisierungen filtern können.
+  1. Der Bereich **Visualisierungen**, in dem Sie Visualisierungen hinzufügen, ändern oder anpassen und einen Drillthrough anwenden können.
+  1. Der Bereich **Felder**, in dem die verfügbaren Felder in Ihren Abfragen angezeigt werden. Sie können diese Felder in den Canvasbereich, den Bereich **Filter** oder in den Bereich Visualisierungen ziehen, um **Visualisierungen** zu erstellen oder zu ändern.
+
+  <img src="https://docs.microsoft.com/de-CH/power-bi/fundamentals/media/desktop-getting-started/designer_gsg_reportview.png"/>
+
 ## Bruttolastgang-Datensätze in Power BI laden
 
-1. import data directly from the csv weblink
-1. check and remove null values
-1. Check for duplicated timestamps
-1. sort based on timestamp, then status, and then remove duplicates
-1. change the energy dimension to GWh (easier to read later)
-1. add date column for quick analysis
+1. Daten direkt aus dem csv-Weblink importieren
+1. Nullwerte prüfen und entfernen
+1. Prüfung auf doppelte Zeitstempel
+1. Sortieren nach Zeitstempel, dann nach Status und anschliessend Duplikate entfernen
+1. ändern Sie die Energiedimension in GWh (später leichter zu lesen)
+1. Datumsspalte für schnelle Analyse hinzufügen
 
 ## Glasfasernetz-Datensätze in Power BI laden
 
-1. import downloaded data from folder
-1. check for the quality of the data
-1. remove null values
-1. remove duplicated values based on timestamp and CO
-1. change scale to Gbps for better interpretation
-1. remove outliers (>80Gbps)
-1. add date column for quick analysis
+1. Heruntergeladene Daten aus dem Ordner importieren
+1. prüfen Sie die Qualität der Daten
+1. Nullwerte entfernen
+1. doppelte Werte anhand von Zeitstempel und CO entfernen
+1. ändern Sie die Skala auf Gbps für eine bessere Interpretation
+1. Ausreisser entfernen (>80 Gbps)
+1. Datumsspalte für schnelle Analyse hinzufügen
+1. Referenzieren Sie die Tabelle, um eine aggregierte Tabelle zu erstellen, die die Werte aus allen COs aggregiert. Benennen Sie die neue Tabelle in ```Zuerinet ZH``` um.
+  
+    <img src="https://user-images.githubusercontent.com/7482996/111188184-10102380-85b5-11eb-8b49-26f8251ddbcd.png"/>
+1. Create a groupby action with the information below:
+  
+    <img src="https://user-images.githubusercontent.com/7482996/111187733-92e4ae80-85b4-11eb-97da-c3ed28ae2c0e.png"/>
 
 ## Glasfasernetz-gebiete GeoJSON in Power BI laden
 
-1. import GeoJSON file
-1. Select only "features.properties.name", "features.properties.CO" columns
-1. rename colmsn to ```Gebiet``` and ```CO``` respectively. 
+1. GeoJSON Datei direkt aus dem csv-Weblink importieren
+1. Nur Spalten ```features.properties.name``` und ```features.properties.CO``` auswählen
+1. Spalten in ```Gebiet``` und ```CO``` umbenennen
 
 ## Create Calendar Table
 
-1. use ```CALENDARAUTO()``` for magical calendar table.
-1. use the code snippet below to ge a more detailed 15-Minute DateTime table.
+1. Verwenden Sie ```CALENDARAUTO()``` für eine magische Kalendertabellenerstellung
+1. Verwenden Sie den folgenden Code-Snippet, um eine detailliertere 15-Minuten-DatumZeit-Tabelle zu erstellen.
     ```
     Time Table = 
     ADDCOLUMNS(
@@ -190,9 +215,12 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
         "Year", YEAR([Date]),
         "Quarter", QUARTER([Date]),
         "YearQuarter", FORMAT([Date],"yyyy")&"-Q"&QUARTER([Date]),
+        "YearMonth", FORMAT([Date],"yyyy-mmm"),
         "Month", FORMAT([Date],"mmm"),
         "Day", DAY([Date]),
         "WeekDay", FORMAT([Date],"ddd"),
+        "WeekDayID", WEEKDAY([Date],2),
+        "Weekend", IF(WEEKDAY([Date],2)>5,"Weekend","Workday"),
         "WeekTime", WEEKDAY([Date],2)+(HOUR([Time])*60+MINUTE([Time]))/1440,
         "StartofWeek", [Date] - WEEKDAY([Date],2) + 1,
         "StartofMonth", DATE(YEAR([Date]),MONTH([Date]),1),
@@ -200,17 +228,16 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
         "DateTime", [Date]+[Time]
     )
     ```
-1. Add new columns as needed
 
-## Set relationships
+## Beziehungen einstellen
 
-1. the relationship would automatically appear afet apply and close. Otherwise can lso be set manually with drag and drop, or using the relationships button in the toolbar. 
+1. Die Beziehung würde automatisch nach dem Anwenden und Schliessen erscheinen. Andernfalls kann die Beziehung auch manuell durch Ziehen und Ablegen oder über die Schaltfläche "Beziehungen" in der Symbolleiste festgelegt werden. 
 
     <img src="https://user-images.githubusercontent.com/7482996/110663918-39047300-81c7-11eb-9780-27f02f094b04.png" alt ="Verbindungen zwischen Tabellen"/>
 
-## Claculated Columns and Measures
+## Berechnete Spalten und Measures
 
-  - Calculated Column example:
+  - Beispiel für eine berechnete Spalte:
     
     ```
     Up/Down Ratio ZH % = 
@@ -218,7 +245,7 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
               zurinet_csv[DOWNSTREAM (Gb/s)]
             )
     ```
-  - Calculated Measure example:
+  - Beispiel für eine berechnete Measure:
     
     ```
     Median Up/Down Ratio ZH % = 
@@ -229,73 +256,24 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
             )
     ```
 
-## Build reports and investigate
+## Berichte erstellen und Untersuchungen durchführen
 
-1. energy and fiber vs date
-1. fiber per CO in a Map
-1. Investigate time of the week, year, months (How dows the energy or internet consumption pattern changes)
+- Sie finden die Berichtsvorlage in diesem Repository unter "files/PowerBI_template.pbit". Die Vorlage benötigt den Ordrner mit den heruntergeladenen Glassfasser csv-Dateien. z.B. 
+
+  <img src="https://user-images.githubusercontent.com/7482996/111190594-89a91100-85b7-11eb-8476-756c879c7b2d.png"/>
+
+- Die Vorlage enthält die folgenden Berichtsseiten:
+  
+  1. Energieverbrauch über die Zeit
+  1. Internetverbrauch vs. Energieverbrauch über die Zeit
+  1. Visualisierung des Internetverbrauchs jedes Gebiets
+  1. Untersuchen Sie den Verbrauch über die Zeit von Woche, Tageszeit, Jahr, Quartal, Monat (Wie ändert sich das Energie- oder Internetverbrauchsmuster?)
 
 
-
- 
 ---
 ***
 
-
-<!-- ## CSV-Datensätze in Excel laden
-
-Vielleicht fragst Du Dich unterdessen, wozu der ganze Exkurs über CSV dienlich sein soll...(?)
-Leider ist es so, dass viele Datennutzende bereits zu diesem Zeitpunkt scheitern, wenn sie noch nie mit CSV gearbeitet haben und eine CSV-Datei in Excel öffnen wollen.
-Daher zeigen wir Euch in diesem Abschnitt, wie man vorgehen sollte, wenn man mit CSV-Datensätzen in Excel arbeiten möchte.
-
-**Wie es NICHT funktioniert:**
-Ein Doppelklicken auf eine CSV-Datei - wie in unten gezeigter Animation gezeigt - funktioniert leider in den meisten Fällen nicht.
-Obwohl man gemäss des im Beispiel angezeigten Icons der Datei das Gefühl hätte, dass dies so möglich sein sollte. Folgendes geschieht jedoch stattdessen: 
-
-<video src="https://user-images.githubusercontent.com/2479732/105727214-25f55680-5f2b-11eb-8d62-e1d64c5bbd65.mp4" controls="controls" muted="muted" style="max-height:640px;"><img alt="02_excelissue" src="https://user-images.githubusercontent.com/2479732/104017881-32528300-51b9-11eb-8d15-39debf3c426a.gif"/></video>
-
-Die CSV-Datei wird zwar in Excel geöffnet, es findet dabei jedoch keine Trennung der einzelnen Attribute in Spalten statt (vgl. mit der oben gezeigten Tabelle).
-Mit der hier gezeigten Vorgehensweise sind alle Werte in eine Spalte (hier Spalte A) eingefügt worden. Damit lässt sich nicht bequem weiterarbeiten.
-
-## Datenauswertung mit Excel 
-Excel ist bezüglich Datenanalyse selbstverständlich nicht allererste Sahne.
-Fortgeschrittenere Datennutzende verwenden in der Regel eher Statistiktools wie **[R](https://www.r-project.org/)** (siehe dazu Ressourcen, wie [Rddj](https://rddj.info/) oder [RStudio Education](https://education.rstudio.com/blog/2020/05/remote-roundup/)) oder **[Python](https://www.python.org/)** (siehe dazu Ressourcen, wie [Data analysis with Python](https://csmastersuh.github.io/data_analysis_with_python_2020/ ) oder [Information Visualization](https://infovis.fh-potsdam.de/tutorials/)). 
-
-### Anzahl Kleinkinder nach Stadtquartier
-Beginnen wir zuerst einmal damit herauszufinden, wie viele Kleinkinder es pro Stadtquartier am 31.12.2019 gab.
-
-- **Schritt 1:** Gehe zum Menu **Einfügen**, klicke aufs **PivotChart-Icon** und wähle **PivotChart und PivotTable**.
-
-- **Schritt 2:** Mit dem Pop-Up **PivotTable erstellen** wirst Du aufgefordert, den Tabellenbereich der analysiert werden soll auszuwählen. Sofern Du alle Daten des aktiven Arbeitsblattes betrachten möchtest, musst Du hier nichts anpassen. Als weitere Option kannst Du auswählen, ob die PivotTable in ein bestimmtes oder in ein neues Arbeitsblatt eingefügt werden soll. Klicke danach auf **OK**.
-
-- **Schritt 3:** Im neuen Arbeitsblatt erscheinen nun die noch leeren PivotTable- und PivotChart-Flächen. Auf der rechten Seite siehst Du die PivotTable-Felder, welche Du **interaktiv** per drag & drop in vier Bereiche ziehen kannst. 
-  - a) **WERTE**: hier werden die zu aggregierenden Wertefelder definiert. In unserem Fall ist das die **Anzahl Personen** aus der wirtschaftlichen Wohnbevölkerung (`AnzBestWir`) .
-  - b) **ZEILEN**: hier werden die Felder eingefügt, welche als Zeilen dargestellt werden sollen. In unserem Fall also die **Stadtquartiere** (`QuartLang`). Die Stadtquartiere können mit ihren Namen oder mit ihren offiziellen IDs (`QuartSort`oder `QuartCd`) angezeigt werden.
-  - c) **SPALTEN**: hier könnten weitere Ausprägungen ausgewählt werden, wie z.B. das Geschlecht oder die Herkunft. Für unsere Fragestellung sind diese Felder jedoch nicht relevant. Deshalb bleibt dieser Bereich leer.
-  - d) **FILTER**: hier können für Attribute gewisse Werte aus den Daten gefiltert werden. So müssen wir nun das für uns relevante **Jahr** (`StichtagDatJahr`), also **2019**, auswählen. Ausserdem betrachten wir ja lediglich die Kleinkinder. Wir definieren sie hier als jene Personen in der **Alterskategorie** (`AlterV05Kurz`) **0-4**. Also der Kinder die jünger als 5 Jahre alt sind. Man könnte die Definition selbstverständlich auch anders festlegen.
-  
-  <video preload="none" poster="https://user-images.githubusercontent.com/538415/105816425-94cac200-5fb4-11eb-80a2-fdfe0a96d2a1.jpg" src="https://user-images.githubusercontent.com/2479732/105727578-897f8400-5f2b-11eb-952d-3d28126196c3.mp4" controls="controls" muted="muted" style="max-height:640px;"><img alt="05_bevbest_pivot" src="https://user-images.githubusercontent.com/2479732/104037207-ac443580-51d4-11eb-8458-4ee22822d42d.gif"/></video>
-  
-- **Schritt 4:** Damit haben wir nun bereits die erforderliche Tabelle und eine simple Grafik der Anzahl Kleinkinder pro Stadtquartier Ende 2019. Benenne das Arbeitsblatt wieder, z.B. mit `BevBest_Pivot`.
-
-### Vergleich zur Anzahl Hunde und Kleinkinder
-Damit wir die Resultate der Anzahl Hunde und Anzahl Kleinkinder pro Stadtquartier vergleichen können, kopieren wir am einfachsten die Resultate der Pivot-Tabellen in ein neues Arbeitsblatt.
-
-- **Schritt 1:** Füge ein neues Arbeitsblatt (mit Klick auf das Plus-Zeichen unten rechts neben den anderen Arbeitsblättern) hinzu. Gib ihm einen Namen. In unserem Beispiel `Vgl_Kleinkinder_Hunde`.
-
-- **Schritt 2:** Kopiere die Werte der Anzahl Kleinkinder pro Stadtquartier und füge sie ins neue Arbeitsblatt ein. 
-
-- **Schritt 3:** Mache das gleiche mit den Werten zur Anzahl Hunde pro Stadtquartier und füge sie mit etwas Abstand rechts ins neue Arbeitsblatt ein. 
-
-<video preload="none" poster="https://user-images.githubusercontent.com/538415/105816678-e410f280-5fb4-11eb-96f2-552408ac88ca.jpg" src="https://user-images.githubusercontent.com/2479732/105728266-3f4ad280-5f2c-11eb-92e2-092bca21b723.mp4" controls="controls" muted="muted" style="max-height:640px;"><img alt="07_results" src="https://user-images.githubusercontent.com/2479732/104167948-86e64000-53fd-11eb-9a1a-152601170a01.gif"/></video>
-
-# Anhänge
-
-## CSV-Datei
-Die CSV-Datei, auf der dieser Kurs basiert, kann von GitHub heruntergeladen werden: [ZIP-Datei mit den verlinkten CSVs](https://github.com/opendatazurich/kurs-template/raw/main/files/beispiel.csv).
-[![Excel-Datei](https://user-images.githubusercontent.com/538415/104441265-bb8c0000-5593-11eb-91ac-daf61d617bc1.png)](https://github.com/opendatazurich/kurs-template/raw/main/files/beispiel.csv) -->
-
-# Tutorials
+# Weitere Tutorials
 
 ### Datawrapper
 Datawrapper hat eine Reihe von [Tutorials](https://academy.datawrapper.de/) und [Schulungsunterlagen](https://www.datawrapper.de/training-materials/), die die einzelnen Diagramm- und Karten-Typen erklären und wie damit Visualisierungen erstellt werden können.
