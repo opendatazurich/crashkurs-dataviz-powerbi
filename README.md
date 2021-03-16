@@ -275,7 +275,16 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 
 # Weitere Tutorials
 
-### Datawrapper
+## Power BI selbst lernen
+
+- Tutorial: Erstellen von ansprechenden Berichten aus Excel-Arbeitsmappen in Power BI Desktop «[LINK](https://docs.microsoft.com/de-CH/power-bi/create-reports/desktop-excel-stunning-report)»
+
+- Microsoft learn for Power BI: Drei Hauptsammlungen «[LINK](https://docs.microsoft.com/de-CH/learn/powerplatform/power-bi?WT.mc_id=powerbi_landingpage-product-service)»
+  - Einstieg in Power BI
+  - Der Weg zum Data Analyst
+  - Entwickeln mit Power Platform
+
+<!-- ## Datawrapper
 Datawrapper hat eine Reihe von [Tutorials](https://academy.datawrapper.de/) und [Schulungsunterlagen](https://www.datawrapper.de/training-materials/), die die einzelnen Diagramm- und Karten-Typen erklären und wie damit Visualisierungen erstellt werden können.
 
 Beispiele:
@@ -284,9 +293,9 @@ Beispiele:
 - [How to create a grouped column chart](https://academy.datawrapper.de/article/21-how-to-create-a-grouped-column-chart)
 - [How to choose the best interpolation for your colors (choropleth map)](https://academy.datawrapper.de/article/117-color-palette-for-your-map)
 
-### Programmierung (R, Python, SPARQL)
+## Programmierung (R, Python, SPARQL)
 - [Data analysis with Python](https://csmastersuh.github.io/data_analysis_with_python_2020/)
 - [Information Visualization (Python)](https://infovis.fh-potsdam.de/tutorials/).
 - [Getting started with data visualization in R using ggplot2](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/)
 - [Rddj - Hand-curated, high quality resources for doing data journalism with R.](https://rddj.info/)
-- [Einführung in Wikidata](https://www.wikidata.org/wiki/Wikidata:Tours), siehe dazu auch das [Trainingsmaterial von Open Data Zürich zu Wikidata](https://github.com/opendatazurich/wikidata-training).
+- [Einführung in Wikidata](https://www.wikidata.org/wiki/Wikidata:Tours), siehe dazu auch das [Trainingsmaterial von Open Data Zürich zu Wikidata](https://github.com/opendatazurich/wikidata-training). -->
