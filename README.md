@@ -8,7 +8,7 @@
  -->
 # Teil 1: Daten finden
 
-Rufe den Open Data Katalog der Stadt Zürich auf unter: «[https://data.stadt-zuerich.ch/](https://data.stadt-zuerich.ch/)». Wir müssen drei Datensätze herunterladen
+Rufe den Open Data Katalog der Stadt Zürich auf «[https://data.stadt-zuerich.ch/](https://data.stadt-zuerich.ch/)». Wir müssen drei Datensätze herunterladen:
 
 1. Glasfasernetz Leistungsdaten der Stadt Zürich
 1. Glasfasernetz Gebiete der Stadt Zürich
@@ -16,9 +16,9 @@ Rufe den Open Data Katalog der Stadt Zürich auf unter: «[https://data.stadt-zu
 
 ## [Daten] Glasfasernetz Leistungsdaten
 
-- **Schritt 1:** Suche nach Zürich Glasfasernetz Leistungsdaten. Gebe dazu im Suchfeld beispielsweise den Begriff «Glasfasernetz» und «Leistungsdaten» ein. Beim Eintippen des Suchbegriffs werden bereits passende Vorschläge zu auf dem Katalog vorkommenden Daten angezeigt.  
+- **Schritt 1:** Suche nach «Zürich Glasfasernetz Leistungsdaten». Gib dazu im Suchfeld beispielsweise den Begriff «Glasfasernetz» und «Leistungsdaten» ein. Während dem Eintippen des Suchbegriffs werden bereits passende Vorschläge angezeigt.  
 
-- **Schritt 2:** Wähle das Dataset «[Zürich Glasfasernetz Leistungsdaten](https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet)» aus und lies die Metadaten dazu. Besonders wichtig sind dabei die Attributbeschreibungen, welche die Ausprägungen der Informationen im Datensatz beschreiben. Weiterführende wichtige Informationen sind auch unter *Bemerkungen* zu finden. 
+- **Schritt 2:** Wähle das Dataset «[Zürich Glasfasernetz Leistungsdaten](https://data.stadt-zuerich.ch/dataset/ewz_leistungsdaten_zuerinet)» aus und lese die Metadaten dazu. Besonders wichtig sind dabei die Attributbeschreibungen, welche die Ausprägungen der Informationen im Datensatz beschreiben. Weiterführende wichtige Informationen sind auch unter *Bemerkungen* zu finden. Beachte, dass die Metadaten und Attributbeschreibungen am Ende der Liste sind und auf der Seite allenfalls heruntergescrollt werden muss, damit diese sichtbar werden.
 
     <img src="https://user-images.githubusercontent.com/7482996/110360261-cd8f9980-803e-11eb-9357-e6d6e21608a5.png" alt="Suchresultatvorschau"/>
   
@@ -27,26 +27,26 @@ Rufe den Open Data Katalog der Stadt Zürich auf unter: «[https://data.stadt-zu
   - Die Datensätze selber sind unter *Daten und Ressourcen* zu finden. Wähle dort einen Datensatz aus und klicke darauf. 
   - Dadurch öffnet sich eine neue Webseite, welche den Downloadlink und eine einfache Datenvorschau beinhaltet.
   - Klicke nun auf den Downloadlink, um die Daten herunter zu laden. 
-  - Es gibt ein File pro Monat. Es wäre besser, alle Datei herunterlanden und in einem Folder kopieren. Wir werden bis Januar 2021 39 Files haben. 
+  - Es gibt eine Datei pro Monat. Es müssen alle Dateien heruntergeladen und in einen Ordner kopiert werden. Es gibt 39 Dateien bis und mit Januar 2021. 
 
 ## [Daten] Glasfasernetz Gebiete
 
-- **Schritt 1:** Suche nach Zürich Glasfasernetz Versorgungszonen. Gebe dazu im Suchfeld beispielsweise den Begriff «Glasfasernetz» und «Versorgungszonen» ein. Beim Eintippen des Suchbegriffs werden bereits passende Vorschläge zu auf dem Katalog vorkommenden Daten angezeigt.  
+- **Schritt 1:** Suche nach «Zürich Glasfasernetz Versorgungszonen». Gib dazu im Suchfeld beispielsweise die Begriffe «Glasfasernetz» und «Versorgungszonen» ein. Während dem Eintippen der Suchbegriffe werden bereits passende Vorschläge angezeigt.  
 
 - **Schritt 2:** Wähle das Dataset «[Zürich Glasfasernetz Versorgungszonen](https://data.stadt-zuerich.ch/dataset/ewz_gebiete_zuerinet)» aus und lies die Metadaten dazu. Besonders wichtig sind dabei die Attributbeschreibungen, welche die Ausprägungen der Informationen im Datensatz beschreiben. 
 
-  - Die Datensätze selber sind unter *Daten und Ressourcen* zu finden. Wähle dort den «ewz_gebiete_zuerinet.json» aus und klicke darauf. 
-  - Dadurch öffnet sich eine neue Webseite, welche den Downloadlink und eine einfache Datenvorschau beinhaltet.
-  - Klicke nun auf den Downloadlink, um die Daten herunter zu laden. 
+  - Die Datensätze selber sind unter *Daten und Ressourcen* zu finden. Klicke dort auf «ewz_gebiete_zuerinet.json». 
+  - Dadurch öffnet sich eine neue Seite, welche den Downloadlink und eine einfache Datenvorschau beinhaltet.
+  - Klicke nun auf den Downloadlink, um die Datei herunter zu laden. 
 
-- **Schritt 3:** Power BI würde diese «[GeoJSON-Datei](https://de.wikipedia.org/wiki/GeoJSON)» im «[TopoJSON-Format](https://en.wikipedia.org/wiki/GeoJSON#TopoJSON)» benötigen. Zur Konvertierung in Topojson können wir das «[MapShaper Portal](https://mapshaper.org/)» verwenden. Wählen Sie nach dem Importieren die Option "Export", wählen Sie «TopoJSON» aus und laden Sie die Datei herunter. Geben Sie die Dateierweiterung "topojson" für zukünftige Referenzen an. 
+- **Schritt 3:** Power BI benötigt diese «[GeoJSON-Datei](https://de.wikipedia.org/wiki/GeoJSON)» im «[TopoJSON-Format](https://en.wikipedia.org/wiki/GeoJSON#TopoJSON)». Für die Konvertierung in das TopoJSON Format können wir das Tool «[MapShaper Portal](https://mapshaper.org/)» verwenden. Drücke nach dem Importieren den Button «Export» und wähle das Fileformat «TopoJSON» aus. Lade die Datei mit der Dateierweiterung "topojson" für zukünftige Referenzen herunter.
 
   <img src="https://user-images.githubusercontent.com/7482996/110362882-27459300-8042-11eb-93ec-7f2021736b0e.png" width=400 alt="MapShaper Import"/> 
   <img src="https://user-images.githubusercontent.com/7482996/110363068-6247c680-8042-11eb-89a1-97c12bf99a8d.png", width=400 alt="MapShaper Export"/>
 
 ## [Daten] Bruttolastgang
 
-- **Schritt 1:** Suche nach Zürich Viertelstundenwerte zum Bruttolastgang elektrische Energie. Gebe dazu im Suchfeld beispielsweise den Begriff «Bruttolastgang» ein. Beim Eintippen des Suchbegriffs werden bereits passende Vorschläge zu auf dem Katalog vorkommenden Daten angezeigt.  
+- **Schritt 1:** Suche nach «Zürich Viertelstundenwerte zum Bruttolastgang elektrische Energie». Gebe dazu im Suchfeld beispielsweise den Begriff «Bruttolastgang» ein. Beim Eintippen des Suchbegriffs werden bereits passende Vorschläge angezeigt.  
 
 - **Schritt 2:** Wähle das Dataset «[Viertelstundenwerte zum Bruttolastgang elektrische Energie der Stadt Zürich](https://data.stadt-zuerich.ch/dataset/ewz_bruttolastgang_stadt_zuerich)» aus und lies die Metadaten dazu. Besonders wichtig sind dabei die Attributbeschreibungen, welche die Ausprägungen der Informationen im Datensatz beschreiben. Weiterführende wichtige Informationen sind auch unter *Bemerkungen* zu finden. 
 
@@ -109,7 +109,11 @@ Die Kodierung für Unicode-Zeichen ist dabei standardmässig [UTF-8](https://de.
 Der angezeigte CSV-Auszug oben repräsentiert die folgende Tabelle in Excel:
 
 ![Darstellung Excel](https://user-images.githubusercontent.com/2479732/104014716-cc173180-51b3-11eb-9440-3d87d2fb6128.png)
+
 ## Median?
+Die folgende Abbbildung erklärt den Unterschied zwischen Zentralwert (Median) und Mittelwert (Mean). 
+- Der Median von Messwerten ist derjenige Messwert, der genau "in der Mitte" der Liste steht, wenn man die Messwerte der Größe nach sortiert. Falls die Anzahl der Messewerte gerade ist, wird der Mittelwert der beiden in der Mitte stehenden Werte genommen.
+- Der Mittelwert ist die Summe aller Messwerte durch die Anzahl der Messwerte.
 
 <img src="https://user-images.githubusercontent.com/7482996/110783095-3dcd3380-8268-11eb-91a5-978d0524eae6.png"/>
 
@@ -122,19 +126,19 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 
 - Power BI Desktop verfügt über drei Ansichten:
 
-  - ***Berichtsansicht.*** Hier entwerfen Sie mithilfe selbst erstellter Abfragen ansprechende Visualisierungen, ordnen diese wie gewünscht und bei Bedarf auf mehreren Seiten an und geben Sie für andere Benutzer frei
-  - ***Datenansicht.*** Hier können Sie die Daten Ihres Berichts im Datenmodellformat anzeigen und Measures hinzufügen, neue Spalten erstellen und Beziehungen verwalten
-  - ***Beziehungsansicht.*** Hier können Sie eine grafische Darstellung der Beziehungen abrufen, die in Ihrem Datenmodell eingerichtet wurden, und diese je nach Bedarf verwalten oder ändern.
+  - ***Berichtsansicht.*** Hier kannst du mit Hilfe selbst erstellter Abfragen ansprechende Visualisierungen erstellen. Diese Visualisierungen können angeordnet miteiander verknüpft und bei Bedarf auf mehreren Seiten verteilt werden und können für andere Benutzer freigegeben werden.
+  - ***Datenansicht.*** Hier kannst du die Daten eines Berichts im Datenmodellformat anzeigen lassen. Du kannst «Measures» hinzufügen und neue Spalten erstellen. 
+  - ***Beziehungsansicht.*** Hier kannst du eine grafische Darstellung der Beziehungen abrufen, die im Datenmodell erstellt wurden und diese je nach Bedarf verwalten oder ändern.
 
   <img src="https://docs.microsoft.com/en-us/power-bi/transform-model/media/desktop-query-overview/query-overview-view-icons.png"/>
 
-- Sie können den Power Query-Editor aufrufen, indem Sie auf der Registerkarte Start auf die Option Abfragen bearbeiten klicken.
+- Der Power Query-Editor kann aufgerufen werden, indem man auf der Registerkarte «Start» auf die Option «Abfragen bearbeiten» klickt.
   
   <img src="https://docs.microsoft.com/en-us/power-bi/transform-model/media/desktop-query-overview/query-overview-transform.png"/>
 
 - Nach dem Herstellen einer Datenverbindung sieht der Power Query-Editor wie folgt aus:
 
-  1. Im Menüband sind jetzt viele Schaltflächen aktiv, über die Sie die Daten in der Abfrage interaktiv bearbeiten können.
+  1. Im Menüband sind jetzt viele Schaltflächen aktiv, über die man die Daten in der Abfrage interaktiv bearbeiten kann.
 
   1. Im linken Bereich sind die Abfragen aufgelistet und können ausgewählt, angezeigt und strukturiert werden.
   
@@ -144,22 +148,22 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 
   <img src="https://docs.microsoft.com/en-us/power-bi/transform-model/media/desktop-query-overview/query-overview-with-data-connection.png"/>
 
-- Wenn Sie mit Ihrer Abfrage zufrieden sind, klicken Sie im Dateimenü des Power Query-Editors auf ***Close & Apply*** (Schliessen und anwenden). Mit dieser Aktion werden die Änderungen angewendet und der Editor geschlossen.
+- Wenn du mit der Abfrage zufrieden bist, klicke im Dateimenü des Power Query-Editors auf ***Close & Apply*** (Schliessen und anwenden). Mit dieser Aktion werden die Änderungen angewendet und der Editor geschlossen.
     
     <img src="https://user-images.githubusercontent.com/7482996/110667557-a960c380-81ca-11eb-8e93-9326e72af365.png"/>
 
 ### Report Builder
 
-  Sie könnten längere Version auf dem Microsoft Portal finden: «(Erstellen von Berichten)[https://docs.microsoft.com/de-CH/power-bi/fundamentals/desktop-getting-started]»
+  Eine ausführliche Version kannst du auf dem Microsoft Portal finden: «[Erstellen von Berichten](https://docs.microsoft.com/de-CH/power-bi/fundamentals/desktop-getting-started)»
 
-- In der Power BI Desktop-Ansicht Bericht können Sie Visualisierungen und Berichte erstellen. Die Ansicht Bericht besteht aus sechs Hauptbereichen:
+- In der Power BI Desktop-Ansicht Bericht kannst du Visualisierungen und Berichte erstellen. Die Ansicht «Bericht» besteht aus sechs Hauptbereichen:
   
   1. Das Menüband im oberen Bereich, in dem häufige Aufgaben in Verbindung mit Berichten und Visualisierungen angezeigt werden.
   1. Der Canvasbereich, in dem Visualisierungen erstellt und angeordnet werden.
-  1. Der Registerkartenbereich „Seiten“ am unteren Rand, in dem Sie Berichtsseiten auswählen oder hinzufügen können.
-  1. Der Bereich **Filter**, in dem Sie Datenvisualisierungen filtern können.
-  1. Der Bereich **Visualisierungen**, in dem Sie Visualisierungen hinzufügen, ändern oder anpassen und einen Drillthrough anwenden können.
-  1. Der Bereich **Felder**, in dem die verfügbaren Felder in Ihren Abfragen angezeigt werden. Sie können diese Felder in den Canvasbereich, den Bereich **Filter** oder in den Bereich Visualisierungen ziehen, um **Visualisierungen** zu erstellen oder zu ändern.
+  1. Der Registerkartenbereich **Seiten** am unteren Rand, in dem Berichtsseiten ausgewählt oder hinzugefügt werden können.
+  1. Der Bereich **Filter**, in der Datenvisualisierungen gefiltert werden können.
+  1. Der Bereich **Visualisierungen**, in dem Visualisierungen hinzugefügt, geändert, angepasst und ein Drillthrough angewendet werden können.
+  1. Der Bereich **Felder**, in dem die verfügbaren Felder in den Abfragen angezeigt werden. Diese Felder können in den Canvasbereich, den Bereich **Filter** oder in den Bereich Visualisierungen gezogen werden, um **Visualisierungen** zu erstellen oder zu ändern.
 
   <img src="https://docs.microsoft.com/de-CH/power-bi/fundamentals/media/desktop-getting-started/designer_gsg_reportview.png"/>
 
@@ -169,22 +173,22 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 1. Nullwerte prüfen und entfernen
 1. Prüfung auf doppelte Zeitstempel
 1. Sortieren nach Zeitstempel, dann nach Status und anschliessend Duplikate entfernen
-1. ändern Sie die Energiedimension in GWh (später leichter zu lesen)
+1. Ändern der Energiedimension nach GWh (für eine bessere Lesbarkeit)
 1. Datumsspalte für schnelle Analyse hinzufügen
 
 ## Glasfasernetz-Datensätze in Power BI laden
 
-1. Heruntergeladene Daten aus dem Ordner importieren
-1. prüfen Sie die Qualität der Daten
+1. Heruntergeladene Dateien aus dem Ordner importieren
+1. Prüfen der Datenqualität
 1. Nullwerte entfernen
-1. doppelte Werte anhand von Zeitstempel und CO entfernen
-1. ändern Sie die Skala auf Gbps für eine bessere Interpretation
+1. Doppelte Werte anhand von Zeitstempel und CO entfernen
+1. Ändern der Skala auf Gbps (für eine bessere Interpretation)
 1. Ausreisser entfernen (>80 Gbps)
 1. Datumsspalte für schnelle Analyse hinzufügen
-1. Referenzieren Sie die Tabelle, um eine aggregierte Tabelle zu erstellen, die die Werte aus allen COs aggregiert. Benennen Sie die neue Tabelle in ```Zuerinet ZH``` um.
+1. Referenzieren einer Tabelle, um eine aggregierte Tabelle zu erstellen, die die Werte aus allen CO's aggregiert. Benenne die neue Tabelle ```Zuerinet ZH```:
   
     <img src="https://user-images.githubusercontent.com/7482996/111188184-10102380-85b5-11eb-8b49-26f8251ddbcd.png"/>
-1. Create a groupby action with the information below:
+1. Kreieren einer ***groupby action*** mit den folgenden Einstellungen:
   
     <img src="https://user-images.githubusercontent.com/7482996/111187733-92e4ae80-85b4-11eb-97da-c3ed28ae2c0e.png"/>
 
@@ -196,8 +200,8 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 
 ## Create Calendar Table
 
-1. Verwenden Sie ```CALENDARAUTO()``` für eine magische Kalendertabellenerstellung
-1. Verwenden Sie den folgenden Code-Snippet, um eine detailliertere 15-Minuten-DatumZeit-Tabelle zu erstellen.
+1. Verwende ```CALENDARAUTO()``` für eine automatische Kalendertabellenerstellung
+1. Verwende das folgende Code-Snippet, um eine detailliertere 15-Minuten-DatumZeit-Tabelle zu erstellen.
     ```
     Time Table = 
     ADDCOLUMNS(
@@ -231,11 +235,13 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 
 ## Beziehungen einstellen
 
-1. Die Beziehung würde automatisch nach dem Anwenden und Schliessen erscheinen. Andernfalls kann die Beziehung auch manuell durch Ziehen und Ablegen oder über die Schaltfläche "Beziehungen" in der Symbolleiste festgelegt werden. 
+1. Die Beziehung erscheint automatisch nach dem Anwenden und Schliessen des Dialogs. Andernfalls kann die Beziehung auch manuell durch Ziehen und Ablegen oder über die Schaltfläche «Beziehungen» in der Symbolleiste festgelegt werden. 
 
     <img src="https://user-images.githubusercontent.com/7482996/110663918-39047300-81c7-11eb-9780-27f02f094b04.png" alt ="Verbindungen zwischen Tabellen"/>
 
 ## Berechnete Spalten und Measures
+
+Der Unterschied zwischen «berechneten Spalten» und «Measures» ist der Kontext der Auswertung. Eine «Measure» wird im Kontext der ausgewerteten Zelle in einem Bericht oder in einer DAX-Abfrage ausgewertet, während eine «berechnete Spalte» auf Zeilenebene innerhalb der Tabelle, zu der sie gehört, berechnet wird. Für eine detaillierte Beschreibung schauen Sie bitte auf die Seite von «[sqlbi](https://www.sqlbi.com/articles/calculated-columns-and-measures-in-dax/)».
 
   - Beispiel für eine berechnete Spalte:
     
@@ -258,7 +264,7 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 
 ## Berichte erstellen und Untersuchungen durchführen
 
-- Sie finden die Berichtsvorlage in diesem Repository unter "files/PowerBI_template.pbit". Die Vorlage benötigt den Ordrner mit den heruntergeladenen Glassfasser csv-Dateien. z.B. 
+- Du findest die Berichtsvorlage in diesem Repository unter "files/PowerBI_template.pbit". Die Vorlage benötigt den Ordner mit den heruntergeladenen csv-Dateien für die Glasfasernetz Leistungsdaten. z.B. 
 
   <img src="https://user-images.githubusercontent.com/7482996/111190594-89a91100-85b7-11eb-8476-756c879c7b2d.png"/>
 
@@ -267,7 +273,7 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
   1. Energieverbrauch über die Zeit
   1. Internetverbrauch vs. Energieverbrauch über die Zeit
   1. Visualisierung des Internetverbrauchs jedes Gebiets
-  1. Untersuchen Sie den Verbrauch über die Zeit von Woche, Tageszeit, Jahr, Quartal, Monat (Wie ändert sich das Energie- oder Internetverbrauchsmuster?)
+  1. Untersuchung des Verbrauchs über die Zeit von Woche, Tageszeit, Jahr, Quartal, Monat (wie ändert sich das Energie- oder Internetverbrauchsmuster?)
 
 
 ---
