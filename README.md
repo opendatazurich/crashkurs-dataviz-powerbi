@@ -117,6 +117,22 @@ Die folgende Abbbildung erklärt den Unterschied zwischen Zentralwert (Median) u
 
 <img src="https://user-images.githubusercontent.com/7482996/110783095-3dcd3380-8268-11eb-91a5-978d0524eae6.png"/>
 
+## Was ist Power BI?
+
+Power BI ist eine Sammlung von Software-Services, Apps und Konnektoren, die zusammenarbeiten, um deine unzusammenhängenden Datenquellen in kohärente, visuell ansprechende und interaktive Einblicke zu verwandeln. 
+Bei deinen Daten kann es sich um eine Excel-Tabelle oder um eine Sammlung von Cloud-basierten und lokalen hybriden Data Warehouses handeln. 
+Mit Power BI kannst du dich ganz einfach mit deinen Datenquellen verbinden, visualisieren und entdecken, was wichtig ist, und dies mit jedem teilen, den du möchtest. 
+«[[Mehr Info.]](https://docs.microsoft.com/de-CH/power-bi/fundamentals/power-bi-overview)»
+
+Power BI besteht aus verschiedenen Elementen, die eng miteinander verzahnt sind. 
+Dies sind die drei Grundkomponenten:
+ - Windows-Desktopanwendung namens Power BI Desktop
+ - Online-SaaS (Software-as-a-Service) namens Power BI-Service
+ - Mobile Power BI-Apps für Windows-, iOS- und Android-Geräte
+  <img src="https://docs.microsoft.com/en-US/power-bi/fundamentals/media/power-bi-overview/power-bi-overview-blocks.png"/>
+
+
+Diese drei Elemente - Power BI Desktop, der Service und die mobilen Apps - sind so entwickelt, dass du Geschäftseinblicke auf die Art und Weise erstellen, teilen und konsumieren kannst, die dir und deiner Rolle am effektivsten dient.
 
 ## Power BI Desktop - kurze GUI Intro 
 
@@ -140,11 +156,11 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 
   1. Im Menüband sind jetzt viele Schaltflächen aktiv, über die man die Daten in der Abfrage interaktiv bearbeiten kann.
 
-  1. Im linken Bereich sind die Abfragen aufgelistet und können ausgewählt, angezeigt und strukturiert werden.
+  2. Im linken Bereich sind die Abfragen aufgelistet und können ausgewählt, angezeigt und strukturiert werden.
   
-  1. Im mittleren Bereich werden die Daten der ausgewählten Abfrage angezeigt und können dort strukturiert werden.
+  3. Im mittleren Bereich werden die Daten der ausgewählten Abfrage angezeigt und können dort strukturiert werden.
   
-  1. Der Bereich Abfrageeinstellungen wird angezeigt. Hier sind die Eigenschaften der Abfrage und die angewendeten Schritte aufgelistet.
+  4. Der Bereich Abfrageeinstellungen wird angezeigt. Hier sind die Eigenschaften der Abfrage und die angewendeten Schritte aufgelistet.
 
   <img src="https://docs.microsoft.com/en-us/power-bi/transform-model/media/desktop-query-overview/query-overview-with-data-connection.png"/>
 
@@ -237,7 +253,7 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 
 1. Die Beziehung erscheint automatisch nach dem Anwenden und Schliessen des Dialogs. Andernfalls kann die Beziehung auch manuell durch Ziehen und Ablegen oder über die Schaltfläche «Beziehungen» in der Symbolleiste festgelegt werden. 
 
-    <img src="https://user-images.githubusercontent.com/7482996/110663918-39047300-81c7-11eb-9780-27f02f094b04.png" alt ="Verbindungen zwischen Tabellen"/>
+    <img src="https://user-images.githubusercontent.com/7482996/112830565-01d10580-9093-11eb-9fad-d29de0772eff.png" alt ="Verbindungen zwischen Tabellen"/>
 
 ## Berechnete Spalten und Measures
 
@@ -246,34 +262,77 @@ Der Unterschied zwischen «berechneten Spalten» und «Measures» ist der Kontex
   - Beispiel für eine berechnete Spalte:
     
     ```
-    Up/Down Ratio ZH % = 
-      DIVIDE( zurinet_csv[UPSTREAM (Gb/s)] ,
-              zurinet_csv[DOWNSTREAM (Gb/s)]
+    Up/Down Ratio CO % = 
+      DIVIDE( 'Zuerinet CO'[UPSTREAM (Gb/s)] ,
+              'Zuerinet CO'[DOWNSTREAM (Gb/s)]
             )
     ```
-  - Beispiel für eine berechnete Measure:
+  - Beispiele für eine berechnete Measure:
     
     ```
-    Median Up/Down Ratio ZH % = 
+    Median Up/Down Ratio CO % = 
         CALCULATE(
-            DIVIDE( MEDIAN(zurinet_csv[UPSTREAM (Gb/s)]) ,
-                    MEDIAN(zurinet_csv[DOWNSTREAM (Gb/s)])
+            DIVIDE( MEDIAN('Zuerinet CO'[UPSTREAM (Gb/s)]) ,
+                    MEDIAN('Zuerinet CO'[DOWNSTREAM (Gb/s)])
                 )
             )
+    ```
+    ```
+    ing. Download (PB) = 
+        CALCULATE(
+          SUM(
+            'Zuerinet CO'[DOWNSTREAM (Gb/s)]
+          )/8*900/1000000
+        )
+    ```
+    ```
+    ing. Upload (PB) = 
+        CALCULATE(
+          SUM(
+            'Zuerinet CO'[UPSTREAM (Gb/s)]
+          )/8*900/1000000
+        )
     ```
 
 ## Berichte erstellen und Untersuchungen durchführen
 
 - Du findest die Berichtsvorlage in diesem Repository unter "files/PowerBI_template.pbit". Die Vorlage benötigt den Ordner mit den heruntergeladenen csv-Dateien für die Glasfasernetz Leistungsdaten. z.B. 
 
-  <img src="https://user-images.githubusercontent.com/7482996/111190594-89a91100-85b7-11eb-8476-756c879c7b2d.png"/>
+<img src="https://user-images.githubusercontent.com/7482996/111190594-89a91100-85b7-11eb-8476-756c879c7b2d.png"/>
 
 - Die Vorlage enthält die folgenden Berichtsseiten:
   
-  1. Energieverbrauch über die Zeit
+  1. Energieverbrauch über Datum
+      <img src="https://user-images.githubusercontent.com/7482996/112823676-e0b7e700-9089-11eb-80f4-8d6aab03bfbb.gif"/>
+
   1. Internetverbrauch vs. Energieverbrauch über die Zeit
+      <img src="https://user-images.githubusercontent.com/7482996/112828530-18c22880-9090-11eb-86f3-8b5ce8966406.gif"/>
+
+  1. Daten als CSV exportieren
+      <img src="https://user-images.githubusercontent.com/7482996/112829967-2b3d6180-9092-11eb-8514-f9569cd1e0a3.gif"/>
+
   1. Visualisierung des Internetverbrauchs jedes Gebiets
+      
+      ---------
+      I.
+      --------------
+      
+      <img src="https://user-images.githubusercontent.com/7482996/112862876-841ef100-90b6-11eb-9b2a-0fab8293d678.gif"/>
+
+      ---------
+      II.
+      --------------
+      
+      <img src="https://user-images.githubusercontent.com/7482996/112865065-b4678f00-90b8-11eb-9ac7-00cbbd29109d.gif"/>
+      
+      ---------
+      III.
+      --------------
+      
+      <img src="https://user-images.githubusercontent.com/7482996/112869316-4b364a80-90bd-11eb-9574-a5a3e42d16b5.gif"/>
+      
   1. Untersuchung des Verbrauchs über die Zeit von Woche, Tageszeit, Jahr, Quartal, Monat (wie ändert sich das Energie- oder Internetverbrauchsmuster?)
+      <img src="https://user-images.githubusercontent.com/7482996/112823676-e0b7e700-9089-11eb-80f4-8d6aab03bfbb.gif"/>
 
 
 ---
@@ -285,23 +344,9 @@ Der Unterschied zwischen «berechneten Spalten» und «Measures» ist der Kontex
 
 - Tutorial: Erstellen von ansprechenden Berichten aus Excel-Arbeitsmappen in Power BI Desktop «[LINK](https://docs.microsoft.com/de-CH/power-bi/create-reports/desktop-excel-stunning-report)»
 
+- Microsoft Dokumentation: Abfrageübersicht in Power BI Desktop «[LINK](https://docs.microsoft.com/de-CH/power-bi/transform-model/desktop-query-overview)»
+
 - Microsoft learn for Power BI: Drei Hauptsammlungen «[LINK](https://docs.microsoft.com/de-CH/learn/powerplatform/power-bi?WT.mc_id=powerbi_landingpage-product-service)»
   - Einstieg in Power BI
   - Der Weg zum Data Analyst
   - Entwickeln mit Power Platform
-
-<!-- ## Datawrapper
-Datawrapper hat eine Reihe von [Tutorials](https://academy.datawrapper.de/) und [Schulungsunterlagen](https://www.datawrapper.de/training-materials/), die die einzelnen Diagramm- und Karten-Typen erklären und wie damit Visualisierungen erstellt werden können.
-
-Beispiele:
-
-- [Let’s build a stacked bar chart](https://www.datawrapper.de/training-materials/#exercise-1)
-- [How to create a grouped column chart](https://academy.datawrapper.de/article/21-how-to-create-a-grouped-column-chart)
-- [How to choose the best interpolation for your colors (choropleth map)](https://academy.datawrapper.de/article/117-color-palette-for-your-map)
-
-## Programmierung (R, Python, SPARQL)
-- [Data analysis with Python](https://csmastersuh.github.io/data_analysis_with_python_2020/)
-- [Information Visualization (Python)](https://infovis.fh-potsdam.de/tutorials/).
-- [Getting started with data visualization in R using ggplot2](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/)
-- [Rddj - Hand-curated, high quality resources for doing data journalism with R.](https://rddj.info/)
-- [Einführung in Wikidata](https://www.wikidata.org/wiki/Wikidata:Tours), siehe dazu auch das [Trainingsmaterial von Open Data Zürich zu Wikidata](https://github.com/opendatazurich/wikidata-training). -->
