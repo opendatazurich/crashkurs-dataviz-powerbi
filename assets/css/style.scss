@@ -81,6 +81,12 @@ nav ul {
 
 nav ul li {
   color: #0f05a0;
+  padding:5px 0px;
+  line-height:16px;
+  max-height: 21px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 nav ul li.tag-h1 {
