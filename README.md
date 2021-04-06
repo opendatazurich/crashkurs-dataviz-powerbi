@@ -296,7 +296,7 @@ Der Unterschied zwischen «berechneten Spalten» und «Measures» ist der Kontex
       <img src="https://user-images.githubusercontent.com/7482996/112862876-841ef100-90b6-11eb-9b2a-0fab8293d678.gif"/>
 
       ---------
-      II. Standorkarte
+      II. Standortkarte
       
       <img src="https://user-images.githubusercontent.com/7482996/112865065-b4678f00-90b8-11eb-9ac7-00cbbd29109d.gif"/>
       
