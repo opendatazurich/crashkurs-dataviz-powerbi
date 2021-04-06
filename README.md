@@ -59,7 +59,8 @@ Rufe den Open Data Katalog der Stadt Zürich auf «[https://data.stadt-zuerich.c
 
 # Teil 2: Power BI
 
-## CSV... what?
+## Begriffe
+### CSV... what?
 Eines der Grundprinzipien von Open Data ist, dass die Datensätze in **nicht-proprietären Formaten** veröffentlicht werden sollen. Sprich, für die Verwendung der Daten sollen die AnwenderInnen nicht auf kommerzielle Software angewiesen sein. Damit soll allen die gleiche Möglichkeit gegeben werden, mit den Daten arbeiten zu können. Das Excelformat (.xls oder .xlsx) ist ein Beispiel eines proprietären Datenformats, weil es zur Verwendung Excel erfordert.
 
 Das Standardformat für tabellarische Daten ist daher [CSV](https://de.wikipedia.org/wiki/CSV_(Dateiformat)). CSV steht für **C**omma-**s**eparated **v**alues (komma-getrennte Werte).
@@ -86,7 +87,7 @@ Der angezeigte CSV-Auszug oben repräsentiert die folgende Tabelle in Excel:
 
 ![Darstellung Excel](https://user-images.githubusercontent.com/2479732/104014716-cc173180-51b3-11eb-9440-3d87d2fb6128.png)
 
-## Median?
+### Median?
 Die folgende Abbbildung erklärt den Unterschied zwischen Zentralwert (Median) und Mittelwert (Mean). 
 - Der Median von Messwerten ist derjenige Messwert, der genau "in der Mitte" der Liste steht, wenn man die Messwerte der Größe nach sortiert. Falls die Anzahl der Messewerte gerade ist, wird der Mittelwert der beiden in der Mitte stehenden Werte genommen.
 - Der Mittelwert ist die Summe aller Messwerte durch die Anzahl der Messwerte.
@@ -159,7 +160,8 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 
   <img src="https://docs.microsoft.com/de-CH/power-bi/fundamentals/media/desktop-getting-started/designer_gsg_reportview.png"/>
 
-## Bruttolastgang-Datensätze importieren
+## Datensätze importieren
+### Bruttolastgang-Datensätze importieren
 
 1. Daten direkt aus dem csv-Weblink importieren
 1. Nullwerte prüfen und entfernen
@@ -168,7 +170,7 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 1. Ändern der Energiedimension nach GWh (für eine bessere Lesbarkeit)
 1. Datumsspalte für schnelle Analyse hinzufügen
 
-## Glasfasernetz-Datensätze importieren
+### Glasfasernetz-Datensätze importieren
 
 1. Heruntergeladene Dateien aus dem Ordner importieren
 1. Prüfen der Datenqualität
@@ -184,7 +186,7 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
   
     <img src="https://user-images.githubusercontent.com/7482996/111187733-92e4ae80-85b4-11eb-97da-c3ed28ae2c0e.png"/>
 
-## Glasfasernetz-gebiete importieren
+### Glasfasernetz-Gebiete importieren
 
 1. GeoJSON Datei direkt aus dem csv-Weblink importieren
 1. Nur Spalten ```features.properties.name``` und ```features.properties.CO``` auswählen
