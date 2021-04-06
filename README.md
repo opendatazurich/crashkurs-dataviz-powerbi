@@ -14,7 +14,7 @@ Rufe den Open Data Katalog der Stadt Zürich auf «[https://data.stadt-zuerich.c
 1. Glasfasernetz Gebiete der Stadt Zürich
 1. Bruttolastgang der Stadt Zürich
 
-## [Daten] Glasfasernetz Leistungsdaten
+## Glasfasernetz Leistungsdaten
 
 - **Schritt 1:** Suche nach «Zürich Glasfasernetz Leistungsdaten». Gib dazu im Suchfeld beispielsweise den Begriff «Glasfasernetz» und «Leistungsdaten» ein. Während dem Eintippen des Suchbegriffs werden bereits passende Vorschläge angezeigt.  
 
@@ -29,7 +29,7 @@ Rufe den Open Data Katalog der Stadt Zürich auf «[https://data.stadt-zuerich.c
   - Klicke nun auf den Downloadlink, um die Daten herunter zu laden. 
   - Es gibt eine Datei pro Monat. Es müssen alle Dateien heruntergeladen und in einen Ordner kopiert werden. Es gibt 39 Dateien bis und mit Januar 2021. 
 
-## [Daten] Glasfasernetz Gebiete
+## Glasfasernetz Gebiete
 
 - **Schritt 1:** Suche nach «Zürich Glasfasernetz Versorgungszonen». Gib dazu im Suchfeld beispielsweise die Begriffe «Glasfasernetz» und «Versorgungszonen» ein. Während dem Eintippen der Suchbegriffe werden bereits passende Vorschläge angezeigt.  
 
@@ -44,7 +44,7 @@ Rufe den Open Data Katalog der Stadt Zürich auf «[https://data.stadt-zuerich.c
   <img src="https://user-images.githubusercontent.com/7482996/110362882-27459300-8042-11eb-93ec-7f2021736b0e.png" width=400 alt="MapShaper Import"/> 
   <img src="https://user-images.githubusercontent.com/7482996/110363068-6247c680-8042-11eb-89a1-97c12bf99a8d.png", width=400 alt="MapShaper Export"/>
 
-## [Daten] Bruttolastgang
+## Bruttolastgang
 
 - **Schritt 1:** Suche nach «Zürich Viertelstundenwerte zum Bruttolastgang elektrische Energie». Gebe dazu im Suchfeld beispielsweise den Begriff «Bruttolastgang» ein. Beim Eintippen des Suchbegriffs werden bereits passende Vorschläge angezeigt.  
 
@@ -56,30 +56,6 @@ Rufe den Open Data Katalog der Stadt Zürich auf «[https://data.stadt-zuerich.c
   «2020_ewz_bruttolastgang.csv» Datensatz aus und klicke darauf. 
   - Dadurch öffnet sich eine neue Webseite, welche den Downloadlink und eine einfache Datenvorschau beinhaltet.
   - Klicke nun auf den Downloadlink, um die Daten herunter zu laden. 
-
-<!-- ## [Daten] Hundebestand
-Zur Beantwortung der Fragestellung benötigen wir die dazu relevanten Daten. Wir müssen uns zuerst auf die Suche machen:
-
-- **Schritt 1:** Rufe den Open Data Katalog der Stadt Zürich auf unter: [https://data.stadt-zuerich.ch/](https://data.stadt-zuerich.ch/)
-- **Schritt 2:** Suche nach Hundebestand pro Stadtquartier und Jahr. Gebe dazu im Suchfeld beispielsweise den Begriff «Hunde» und «Stadtquartier» ein. Beim Eintippen des Suchbegriffs werden bereits passende Vorschläge zu auf dem Katalog vorkommenden Daten angezeigt.  
-<img src="https://user-images.githubusercontent.com/2479732/103986721-847caf80-518b-11eb-839c-95953ead6f67.png" alt="Suchresultatvorschau"/>
-- **Schritt 3:** 
-  - Wähle das Dataset «[Hundebestand der Stadt Zürich](https://data.stadt-zuerich.ch/dataset/sid_stapo_hundebestand)» aus und lies die Metadaten dazu. Besonders wichtig sind dabei die Attributbeschreibungen, welche die Ausprägungen der Informationen im Datensatz beschreiben. Hier sehen wir beispielsweise, dass es Angaben zu Hundehaltenden und Hunden gibt. Bereits in der ersten Attributbeschreibung zur technischen Identifikationsnummer der hundehaltenden Personen (`HALTER_ID`) erfahren wir eine sehr wichtige Information: ein Record (eine Zeile) im Datensatz entspricht einem Hund. Wenn demnach der gleiche Hundehaltende zwei Hunde hat, so kommt seine ID im Datensatz zweimal vor. Dank der Beschreibung können wir ebenfalls sicher sein, dass die Stadtquartiere in den Daten vorkommen. Weiterführende wichtige Informationen sind auch unter *Bemerkungen* zu finden. 
-  - Die Datensätze selber sind unter *Daten und Ressourcen* zu finden. Wähle dort den aktuellsten Datensatz (2020) aus und klicke darauf. 
-  - Dadurch öffnet sich eine neue Webseite, welche den Downloadlink und eine einfache Datenvorschau beinhaltet.
-  - Klicke nun auf den Downloadlink, um die Daten herunter zu laden.
-  
-  <video preload="none" poster="https://user-images.githubusercontent.com/538415/105815933-e888db80-5fb3-11eb-9074-58310dfb5f96.jpg" src="https://user-images.githubusercontent.com/2479732/105727018-ee86aa00-5f2a-11eb-8f33-90a597fd2658.mp4" controls="controls" muted="muted" style="max-height:640px;"><img alt="01_hundebestand_download" src="https://user-images.githubusercontent.com/2479732/103988953-3669ab00-518f-11eb-99ab-0ca362d5cb0c.gif"/></video>
-
-- **Schritt 4:** Suche nach einem Datensatz, der die Anzahl Kleinkinder pro Stadtquartier und Jahr beinhaltet. Da für die Definition eines Kleinkindes das Alter relevant ist, suchen wir also einen Datensatz, welcher das Alter der Bevölkerung nach Stadtquartier und Jahr beinhaltet. Gib daher im Suchfeld beispielsweise die Begriffe «Alter» und «Stadtquartier» ein. Als [Suchresultat](https://data.stadt-zuerich.ch/dataset?q=alter+stadtquartier&sort=score+desc%2C+date_last_modified+desc) erscheinen nun aber 35 Datensätze. Wir sollte daher noch einen besseren Begriff wählen. Verwende daher die Begriffe «Altersjahr» und «Stadtquartier», dadurch sind es nur noch 8 [Resultate](https://data.stadt-zuerich.ch/dataset?q=altersjahr+stadtquartier&sort=score+desc%2C+date_last_modified+desc).
-
-- **Schritt 5:** Für unsere Fragestellung ist der Datensatz «[Bevölkerung nach Stadtquartier, Herkunft, Geschlecht und Alter, seit 1993](https://data.stadt-zuerich.ch/dataset/bev_bestand_jahr_quartier_alter_herkunft_geschlecht_od3903)» am geeignetsten. Er beinhaltet zwar mehr Informationen als wir benötigen (die Herkunft oder das Geschlecht interessieren uns eigentlich weniger), aber wir werden sie in einem späteren Schritt mit Excel herausfiltern.
- 
-- **Schritt 6:** Lies nun auch wieder die Metadaten zum Datensatz und gehe gleich wie in **Schritt 3** vor, um den Datensatz auf Deinen Computer herunter zu laden.
-
-- **Schritt 7:** Du hast nun die beiden für unsere Fragestellung relevanten Datensätze gefunden und heruntergeladen. Sie heissen `20200306_hundehalter.csv` (Hunde) und `BEV390OD3903.csv`(Bevölkerungsdaten). Kopiere diese beiden Datensätze nun aus dem Downloadverzeichnis Deines Computers und lege sie in ein Verzeichnis, wo Du an den noch folgenden Schritten weiter arbeiten kannst. 
-
-Damit ist unser erster Teil zum Thema «Daten finden» beendet. Solltest Du später einmal für eine andere Fragestellung auf dem [Open Data Katalog der Stadt Zürich](https://data.stadt-zuerich.ch) nicht fündig werden, können auch viele andere Open Data Quellen konsultiert werden. Auf nationaler Ebene werden unter [opendata.swiss](https://opendata.swiss) sämtliche offenen Verwaltungsdaten von verschiedenen Bundesstellen, anderen Kantonen und Städten angeboten.  -->
 
 # Teil 2: Power BI
 
@@ -134,7 +110,7 @@ Dies sind die drei Grundkomponenten:
 
 Diese drei Elemente - Power BI Desktop, der Service und die mobilen Apps - sind so entwickelt, dass du Geschäftseinblicke auf die Art und Weise erstellen, teilen und konsumieren kannst, die dir und deiner Rolle am effektivsten dient.
 
-## Power BI Desktop - kurze GUI Intro 
+## Power BI Desktop - GUI Intro 
 
 ### Query Editor
 
@@ -183,7 +159,7 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 
   <img src="https://docs.microsoft.com/de-CH/power-bi/fundamentals/media/desktop-getting-started/designer_gsg_reportview.png"/>
 
-## Bruttolastgang-Datensätze in Power BI laden
+## Bruttolastgang-Datensätze importieren
 
 1. Daten direkt aus dem csv-Weblink importieren
 1. Nullwerte prüfen und entfernen
@@ -192,7 +168,7 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 1. Ändern der Energiedimension nach GWh (für eine bessere Lesbarkeit)
 1. Datumsspalte für schnelle Analyse hinzufügen
 
-## Glasfasernetz-Datensätze in Power BI laden
+## Glasfasernetz-Datensätze importieren
 
 1. Heruntergeladene Dateien aus dem Ordner importieren
 1. Prüfen der Datenqualität
@@ -208,13 +184,13 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
   
     <img src="https://user-images.githubusercontent.com/7482996/111187733-92e4ae80-85b4-11eb-97da-c3ed28ae2c0e.png"/>
 
-## Glasfasernetz-gebiete GeoJSON in Power BI laden
+## Glasfasernetz-gebiete importieren
 
 1. GeoJSON Datei direkt aus dem csv-Weblink importieren
 1. Nur Spalten ```features.properties.name``` und ```features.properties.CO``` auswählen
 1. Spalten in ```Gebiet``` und ```CO``` umbenennen
 
-## Create Calendar Table
+## Kalendertabelle erstellen
 
 1. Verwende ```CALENDARAUTO()``` für eine automatische Kalendertabellenerstellung
 1. Verwende das folgende Code-Snippet, um eine detailliertere 15-Minuten-DatumZeit-Tabelle zu erstellen.
@@ -226,7 +202,7 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
             SELECTCOLUMNS(
                 GENERATESERIES(
                     TIME(0,0,0),   
-                    TIME(23,59,59),
+                    TIME(23,45,0),
                     TIME(0,15,0)
                     ),
                     "Time" , [Value] 
@@ -237,6 +213,7 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
         "YearQuarter", FORMAT([Date],"yyyy")&"-Q"&QUARTER([Date]),
         "YearMonth", FORMAT([Date],"yyyy-mmm"),
         "Month", FORMAT([Date],"mmm"),
+        "MonthID", MONTH([Date]),
         "Day", DAY([Date]),
         "WeekDay", FORMAT([Date],"ddd"),
         "WeekDayID", WEEKDAY([Date],2),
@@ -255,7 +232,7 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 
     <img src="https://user-images.githubusercontent.com/7482996/112830565-01d10580-9093-11eb-9fad-d29de0772eff.png" alt ="Verbindungen zwischen Tabellen"/>
 
-## Berechnete Spalten und Measures
+## Berechnete Spalten & Measures
 
 Der Unterschied zwischen «berechneten Spalten» und «Measures» ist der Kontext der Auswertung. Eine «Measure» wird im Kontext der ausgewerteten Zelle in einem Bericht oder in einer DAX-Abfrage ausgewertet, während eine «berechnete Spalte» auf Zeilenebene innerhalb der Tabelle, zu der sie gehört, berechnet wird. Für eine detaillierte Beschreibung schauen Sie bitte auf die Seite von «[sqlbi](https://www.sqlbi.com/articles/calculated-columns-and-measures-in-dax/)».
 
@@ -314,25 +291,22 @@ Der Unterschied zwischen «berechneten Spalten» und «Measures» ist der Kontex
   1. Visualisierung des Internetverbrauchs jedes Gebiets
       
       ---------
-      I.
-      --------------
+      I. Ribon Plot
       
       <img src="https://user-images.githubusercontent.com/7482996/112862876-841ef100-90b6-11eb-9b2a-0fab8293d678.gif"/>
 
       ---------
-      II.
-      --------------
+      II. Standorkarte
       
       <img src="https://user-images.githubusercontent.com/7482996/112865065-b4678f00-90b8-11eb-9ac7-00cbbd29109d.gif"/>
       
       ---------
-      III.
-      --------------
+      III. Tabelle
       
-      <img src="https://user-images.githubusercontent.com/7482996/112869316-4b364a80-90bd-11eb-9574-a5a3e42d16b5.gif"/>
+      <img src="https://user-images.githubusercontent.com/7482996/113679658-4a567780-96c0-11eb-8264-127c6a1a65a2.gif"/>
       
   1. Untersuchung des Verbrauchs über die Zeit von Woche, Tageszeit, Jahr, Quartal, Monat (wie ändert sich das Energie- oder Internetverbrauchsmuster?)
-      <img src="https://user-images.githubusercontent.com/7482996/112823676-e0b7e700-9089-11eb-80f4-8d6aab03bfbb.gif"/>
+      <img src="https://user-images.githubusercontent.com/7482996/112869316-4b364a80-90bd-11eb-9574-a5a3e42d16b5.gif"/>
 
 
 ---
