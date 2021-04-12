@@ -258,19 +258,25 @@ Der Unterschied zwischen «berechneten Spalten» und «Measures» ist der Kontex
     ```
     ```
     ing. Download (PB) = 
-        CALCULATE(
-          SUM(
-            'Zuerinet CO'[DOWNSTREAM (Gb/s)]
-          )/8*900/1000000
-        )
+    CALCULATE(
+      DATEDIFF(MIN('Zuerinet CO'[DATE_TIME])
+              ,MAX('Zuerinet CO'[DATE_TIME])
+              ,SECOND
+      )
+      * AVERAGE('Zuerinet CO'[DOWNSTREAM (Gb/s)])
+      / (8*1000000)
+    )
     ```
     ```
     ing. Upload (PB) = 
-        CALCULATE(
-          SUM(
-            'Zuerinet CO'[UPSTREAM (Gb/s)]
-          )/8*900/1000000
-        )
+    CALCULATE(
+      DATEDIFF(MIN('Zuerinet CO'[DATE_TIME])
+              ,MAX('Zuerinet CO'[DATE_TIME])
+              ,SECOND
+      )
+      * AVERAGE('Zuerinet CO'[UPSTREAM (Gb/s)])
+      / (8*1000000)
+    )
     ```
 
 ## Berichte erstellen und Untersuchungen durchführen
