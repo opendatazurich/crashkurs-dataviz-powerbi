@@ -53,7 +53,7 @@ Rufe den Open Data Katalog der Stadt Zürich auf «[https://data.stadt-zuerich.c
   > ***!!!*** Der Bruttolastgang wird basierend auf zahlreichen Messungen zur Einspeisung und zum Verbrauch berechnet. Einzelne Messungen können dabei fehlen und müssen nachträglich nochmals eingepflegt werden.
 
   - Die Datensätze selber sind unter *Daten und Ressourcen* zu finden. Wähle dort 
-  «ewz_bruttolastgang.csv» Datensatz aus und klicke darauf. 
+  «2020_ewz_bruttolastgang.csv» Datensatz aus und klicke darauf. 
   - Dadurch öffnet sich eine neue Webseite, welche den Downloadlink und eine einfache Datenvorschau beinhaltet.
   - Klicke nun auf den Downloadlink, um die Daten herunter zu laden. 
 
