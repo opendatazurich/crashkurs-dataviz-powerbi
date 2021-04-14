@@ -1,4 +1,4 @@
-# Crashkurs für Power BI Datenvisualisierung
+# Crashkurs Power BI 
 <!-- 
 ## TODO für neuen Kurs
  -->
