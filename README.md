@@ -27,7 +27,7 @@ Rufe den Open Data Katalog der Stadt Zürich auf «[https://data.stadt-zuerich.c
   - Die Datensätze selber sind unter *Daten und Ressourcen* zu finden. Wähle dort einen Datensatz aus und klicke darauf. 
   - Dadurch öffnet sich eine neue Webseite, welche den Downloadlink und eine einfache Datenvorschau beinhaltet.
   - Klicke nun auf den Downloadlink, um die Daten herunter zu laden. 
-  - Es gibt eine Datei pro Monat. Es müssen alle Dateien heruntergeladen und in einen Ordner kopiert werden. Es gibt 39 Dateien bis und mit Januar 2021. 
+  - Es gibt eine Datei pro Monat. Es müssen alle Dateien heruntergeladen und in einen Ordner kopiert werden. Es gibt 39 Dateien bis und mit Januar 2021. (Um diesen Schritt weniger aufwändig zu machen, haben wir für diesen Kurs die [Daten von 2018 bis am 13.04.2021 als Zip-File auf Github](https://github.com/opendatazurich/crashkurs-dataviz-powerbi/blob/main/data_repository/2021_04_13_ewz_leistungsdaten_zuerinet.zip) abgelegt. Sie können also dieses File herunterladen und entzippen. )
 
 ## Glasfasernetz Gebiete
 
