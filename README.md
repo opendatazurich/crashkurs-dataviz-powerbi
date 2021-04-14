@@ -259,29 +259,23 @@ Der Unterschied zwischen «berechneten Spalten» und «Measures» ist der Kontex
     ```
     ing. Download (PB) = 
     CALCULATE(
-      DATEDIFF(MIN('Zuerinet CO'[DATE_TIME])
-              ,MAX('Zuerinet CO'[DATE_TIME])
-              ,SECOND
-      )
-      * AVERAGE('Zuerinet CO'[DOWNSTREAM (Gb/s)])
+      SUM('Zuerinet CO'[DOWNSTREAM (Gb/s)])
+      * 900
       / (8*1000000)
     )
     ```
     ```
     ing. Upload (PB) = 
     CALCULATE(
-      DATEDIFF(MIN('Zuerinet CO'[DATE_TIME])
-              ,MAX('Zuerinet CO'[DATE_TIME])
-              ,SECOND
-      )
-      * AVERAGE('Zuerinet CO'[UPSTREAM (Gb/s)])
+      SUM('Zuerinet CO'[UPSTREAM (Gb/s)])
+      * 900
       / (8*1000000)
     )
     ```
 
 ## Berichte erstellen und Untersuchungen durchführen
 
-- Du findest die Berichtsvorlage in diesem Repository unter "files/PowerBI_template.pbit". Die Vorlage benötigt den Ordner mit den heruntergeladenen csv-Dateien für die Glasfasernetz Leistungsdaten. z.B. 
+- Du findest die Berichtsvorlage in diesem Repository unter "[files/PowerBI_template.pbit](https://github.com/opendatazurich/crashkurs-dataviz-powerbi/raw/main/files/PowerBI_template.pbit)". Die Vorlage benötigt den Ordner mit den heruntergeladenen csv-Dateien für die Glasfasernetz Leistungsdaten. z.B. 
 
 <img src="https://user-images.githubusercontent.com/7482996/111190594-89a91100-85b7-11eb-8476-756c879c7b2d.png"/>
 
