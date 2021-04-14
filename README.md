@@ -318,6 +318,8 @@ Der Unterschied zwischen «berechneten Spalten» und «Measures» ist der Kontex
 
 ## Power BI selbst lernen
 
+- Präsentation: «[LINK](https://github.com/opendatazurich/crashkurs-dataviz-powerbi/raw/main/files/PowerBI_really_short_intro.pdf)»
+
 - Tutorial: Erstellen von ansprechenden Berichten aus Excel-Arbeitsmappen in Power BI Desktop «[LINK](https://docs.microsoft.com/de-CH/power-bi/create-reports/desktop-excel-stunning-report)»
 
 - Microsoft Dokumentation: Abfrageübersicht in Power BI Desktop «[LINK](https://docs.microsoft.com/de-CH/power-bi/transform-model/desktop-query-overview)»
