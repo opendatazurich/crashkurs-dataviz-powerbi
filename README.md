@@ -164,21 +164,43 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 ### Bruttolastgang-Datensätze importieren
 
 1. Daten direkt aus dem csv-Weblink importieren
+  ![load](https://user-images.githubusercontent.com/7482996/115556853-67d73400-a2b1-11eb-8bed-e81f023b778d.gif)
+
 1. Nullwerte prüfen und entfernen
+  ![filter](https://user-images.githubusercontent.com/7482996/115557195-c7cdda80-a2b1-11eb-954b-be4328db24b6.gif)
+
 1. Prüfung auf doppelte Zeitstempel
+  ![dupl](https://user-images.githubusercontent.com/7482996/115558052-9c97bb00-a2b2-11eb-99db-f716c4649027.gif)
+
 1. Sortieren nach Zeitstempel, dann nach Status und anschliessend Duplikate entfernen
+  ![remove_dupl](https://user-images.githubusercontent.com/7482996/115558427-06b06000-a2b3-11eb-9d88-ced401b25b78.gif)
+
 1. Ändern der Energiedimension nach GWh (für eine bessere Lesbarkeit)
+  ![scale](https://user-images.githubusercontent.com/7482996/115559594-1e3c1880-a2b4-11eb-8184-d6f8d79880ee.gif)
+
 1. Datumsspalte für schnelle Analyse hinzufügen
+  ![date](https://user-images.githubusercontent.com/7482996/115559841-5c393c80-a2b4-11eb-814d-c0bb6f2e411d.gif)
+
 
 ### Glasfasernetz-Datensätze importieren
 
 1. Heruntergeladene Dateien aus dem Ordner importieren
+  ![loadfolder](https://user-images.githubusercontent.com/7482996/115560674-1b8df300-a2b5-11eb-9634-16923dc0c7c3.gif)
+
 1. Prüfen der Datenqualität
 1. Nullwerte entfernen
+
 1. Doppelte Werte anhand von Zeitstempel und CO entfernen
+  ![dup2](https://user-images.githubusercontent.com/7482996/115561321-be467180-a2b5-11eb-82c2-b55912e449bd.gif)
+
 1. Ändern der Skala auf Gbps (für eine bessere Interpretation)
+  ![scale2](https://user-images.githubusercontent.com/7482996/115561647-0e253880-a2b6-11eb-985f-9e824ede2a4f.gif)
+
 1. Ausreisser entfernen (>80 Gbps)
+  ![filter2](https://user-images.githubusercontent.com/7482996/115562508-d7035700-a2b6-11eb-85ae-3b0d3397a763.gif)
+
 1. Datumsspalte für schnelle Analyse hinzufügen
+
 1. Referenzieren einer Tabelle, um eine aggregierte Tabelle zu erstellen, die die Werte aus allen CO's aggregiert. Benenne die neue Tabelle ```Zuerinet ZH```:
   
     <img src="https://user-images.githubusercontent.com/7482996/111188184-10102380-85b5-11eb-8b49-26f8251ddbcd.png"/>
