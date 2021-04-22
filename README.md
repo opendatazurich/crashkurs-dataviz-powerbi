@@ -210,7 +210,7 @@ Hier ist eine sehr kurze Einführung in die Power BI-Schnittstelle. Für eine de
 
 ### Glasfasernetz-Gebiete importieren
 
-1. GeoJSON Datei direkt aus dem csv-Weblink importieren
+1. GeoJSON Datei direkt aus dem geojson-Weblink importieren
 1. Nur Spalten ```features.properties.name``` und ```features.properties.CO``` auswählen
 1. Spalten in ```Gebiet``` und ```CO``` umbenennen
 
